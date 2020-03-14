@@ -4,6 +4,7 @@
     <Navbar></Navbar>
     <Hero></Hero>
     <Form></Form>
+    <Timeline></Timeline>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ const CallToAction = () => import("@/components/CallToAction.vue");
 const Navbar = () => import("@/components/Navbar.vue");
 const Hero = () => import("@/components/Hero.vue");
 const Form = () => import("@/components/Form.vue");
+const Timeline = () => import("@/components/Timeline.vue");
 
 export default {
   name: "Home",
@@ -19,7 +21,8 @@ export default {
     CallToAction,
     Navbar,
     Hero,
-    Form
+    Form,
+    Timeline
   }
 };
 </script>
