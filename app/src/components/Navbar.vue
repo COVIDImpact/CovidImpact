@@ -1,7 +1,9 @@
 <template>
   <div class="navbar">
     <div class="navbar__con">
-      <div class="navbar__con--title">#CovidImpact</div>
+      <div class="navbar__con--title">
+        <b>#CovidImpact</b>
+      </div>
       <div class="navbar__con__lang">
         <div class="navbar__con__lang--option">English</div>
         <div class="navbar__con__lang--option">Español</div>
@@ -21,7 +23,8 @@ export default {};
   width: 100%;
 }
 .navbar__con {
-  height: 4em;
+  margin-top: 1em;
+  height: 6em;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -35,7 +38,9 @@ export default {};
 
 @media screen and (min-width: 375px) {
   .navbar__con {
+    margin-top: 0em;
     align-items: center;
+    height: 4em;
   }
   .navbar__con__lang {
     display: flex;

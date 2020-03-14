@@ -2,18 +2,21 @@
   <div class="home">
     <CallToAction></CallToAction>
     <Navbar></Navbar>
+    <Hero></Hero>
   </div>
 </template>
 
 <script>
 const CallToAction = () => import("@/components/CallToAction.vue");
 const Navbar = () => import("@/components/Navbar.vue");
+const Hero = () => import("@/components/Hero.vue");
 
 export default {
-  name: "HelloWorld",
+  name: "Home",
   components: {
     CallToAction,
-    Navbar
+    Navbar,
+    Hero
   }
 };
 </script>
