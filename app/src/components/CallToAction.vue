@@ -21,7 +21,6 @@ export default {};
   padding: 1em 1em;
   background-color: #f958ff;
   height: 5em;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

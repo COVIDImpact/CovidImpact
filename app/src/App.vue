@@ -22,7 +22,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
 }
