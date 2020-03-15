@@ -1,8 +1,14 @@
 <template>
   <div class="cta">
     <div class="cta__con">
-      <div class="cta__con--info">We’ll notify you when government aid becomes available</div>
-      <input class="cta__con--button" type="text" placeholder="example@mail.com" />
+      <div class="cta__con--info">
+        We’ll notify you when government aid becomes available
+      </div>
+      <input
+        class="cta__con--button"
+        type="text"
+        placeholder="example@mail.com"
+      />
     </div>
   </div>
 </template>
