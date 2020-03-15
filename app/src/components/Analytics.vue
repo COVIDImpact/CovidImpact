@@ -81,6 +81,20 @@
       </div>
     </b-card>
     <br />
+    <div class="d-flex justify-content-center ">
+      <b-form-input
+        v-model="currentBalance"
+        placeholder="Enter your current balance"
+      ></b-form-input>
+      <b-form-input
+        v-model="burnRate"
+        placeholder="Enter your brun rate"
+      ></b-form-input>
+      <b-form-input
+        v-model="monthlyRevenue"
+        placeholder="Enter your monthly revenue"
+      ></b-form-input>
+    </div>
   </b-container>
 </template>
 
@@ -88,7 +102,13 @@
 import Chart from "./Chart";
 import moment from "moment";
 
-import { BContainer, BCard, BDropdown, BDropdownItem } from "bootstrap-vue";
+import {
+  BContainer,
+  BCard,
+  BDropdown,
+  BDropdownItem,
+  BFormInput
+} from "bootstrap-vue";
 
 export default {
   components: {
@@ -96,11 +116,15 @@ export default {
     BContainer,
     BCard,
     BDropdown,
-    BDropdownItem
+    BDropdownItem,
+    BFormInput
   },
   data() {
     return {
       datacollection: null,
+      currentBalance: "",
+      burnRate: "",
+      monthlyRevenue: "",
       chartoptions: {
         scales: {
           xAxes: [

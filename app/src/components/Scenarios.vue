@@ -1,6 +1,7 @@
 <template>
   <div class="text-center">
-    <b-button variant="primary">Add More Scenarios</b-button>
+    <br />
+    <b-button variant="primary">Compute</b-button>
     <br />
   </div>
 </template>
