@@ -1,14 +1,8 @@
 <template>
   <div class="cta">
     <div class="cta__con">
-      <div class="cta__con--info">
-        We’ll notify you when government aid becomes available
-      </div>
-      <input
-        class="cta__con--button"
-        type="text"
-        placeholder="example@mail.com"
-      />
+      <div class="cta__con--info">We’ll notify you when government aid becomes available</div>
+      <input class="cta__con--button" type="text" placeholder="example@mail.com" />
     </div>
   </div>
 </template>
@@ -26,7 +20,7 @@ export default {};
 .cta__con {
   padding: 1em 1em;
   background-color: #f958ff;
-  height: 5em;
+  height: 8em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,12 +36,12 @@ export default {};
   text-indent: 1em;
   width: 100%;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 
 @media screen and (min-width: 425px) {
   .cta__con {
-    height: 4em;
+    height: 6em;
     flex-direction: row;
   }
   .cta__con--button {
@@ -56,14 +50,11 @@ export default {};
   }
 }
 @media screen and (min-width: 450px) {
-  .cta_con {
-    height: 3em;
-  }
 }
 @media screen and (min-width: 650px) {
   .cta__con {
     flex-direction: row;
-    height: 2em;
+    height: 5em;
   }
 }
 @media screen and (min-width: 768px) {
