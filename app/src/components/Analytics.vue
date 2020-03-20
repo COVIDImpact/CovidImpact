@@ -445,6 +445,12 @@ export default {
 .card {
   padding: 10px 10px;
 }
+
+.chart-con--title {
+  color: #718096;
+  font-size: 2em;
+  margin-top: 0em;
+}
 .bcard {
   height: 600px;
   width: 100%;
