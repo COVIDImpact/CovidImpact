@@ -1,13 +1,12 @@
 <template>
-  <div class="navbar">
-    <div class="navbar__con">
-      <div class="navbar__con--title">
+  <div class="footer">
+    <div class="footer__con">
+      <div class="footer__con--title">
         <b>#CovidImpact</b>
       </div>
-      <div class="navbar__con__lang">
-        <div class="navbar__con__lang--option">English</div>
-        <div class="navbar__con__lang--option">Français</div>
-        <div class="navbar__con__lang--option">简体中文</div>
+      <div class="footer__con__lang">
+        <div class="footer__con__lang--option">Footer</div>
+        <div class="footer__con__lang--option">Dislcaimer</div>
       </div>
     </div>
   </div>
@@ -18,45 +17,48 @@ export default {};
 </script>
 
 <style scoped>
-.navbar {
+.footer {
   width: 100%;
+  background-color: #edf2f7;
 }
-.navbar__con {
+.footer__con {
   margin-top: 1em;
   height: 6em;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.navbar__con--title {
+.footer__con--title {
   margin-left: 1em;
+  border-bottom: 2px solid #f958ff;
+  padding-bottom: 3px;
 }
-.navbar__con__lang {
+.footer__con__lang {
   margin-right: 1em;
 }
 
 @media screen and (min-width: 375px) {
-  .navbar__con {
+  .footer__con {
     margin-top: 0em;
     align-items: center;
     height: 4em;
   }
-  .navbar__con__lang {
+  .footer__con__lang {
     display: flex;
   }
-  .navbar__con__lang--option {
+  .footer__con__lang--option {
     margin-left: 0.5em;
   }
 }
 @media screen and (min-width: 768px) {
-  .navbar__con {
+  .footer__con {
     width: 768px;
     margin: 0 auto;
   }
-  .navbar__con--title {
+  .footer__con--title {
     margin-left: 0em;
   }
-  .navbar__con__lang {
+  .footer__con__lang {
     margin-right: 0em;
   }
 }

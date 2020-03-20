@@ -1,20 +1,13 @@
 <template>
   <div class="hero">
     <div class="hero__con">
-      <h1 class="hero__con--title">How will COVID-19 affect your business?</h1>
-      <div
-        class="hero__con--info"
-      >We created an app to help Canadian’s find out how COVID-19 will affect their business. Here’s what you need to know:</div>
-      <ul class="hero__con--ul">
-        <li>You’ll receive the results in 30 seconds</li>
-        <li>
-          Our algorithm needs you to provide:
-          <b>Current-Balance</b>,
-          <b>Burn Rate</b> and
-          <b>Monthly Revenue</b>(we’ll take over the rest)
-        </li>
-      </ul>
-      <svg
+      <h1 class="hero__con--title">COVID-19 Business Survival Guide</h1>
+      <div class="hero__con--info">
+        <b>#CovidImpact</b> was created to help Canadian companies survive the COVID-19 pandemic.
+        <br />
+        <br />SARS-CoV-2 is a highly infectious and potentially deadly virus that causes a respiratory disease called COVID-19 or just simply coronavirus.
+      </div>
+      <!-- <svg
         class="hero__con--heart"
         xmlns="http://www.w3.org/2000/svg"
         width="209.295"
@@ -28,7 +21,7 @@
           transform="translate(-524.59 -110.05)"
           fill="#f958ff"
         />
-      </svg>
+      </svg>-->
     </div>
   </div>
 </template>
@@ -47,6 +40,7 @@ export default {};
 .hero__con--title {
   font-size: 2em;
   margin-top: 0em;
+  font-weight: bold;
 }
 .hero__con--info {
   margin-top: 1em;
@@ -68,22 +62,33 @@ export default {};
 }
 @media screen and (min-width: 425px) {
   .hero__con--title {
-    margin-top: 1em;
     font-size: 3em;
   }
 }
+@media screen and (min-width: 450px) {
+  .hero__con--info {
+    font-size: 1.5em;
+  }
+}
 @media screen and (min-width: 768px) {
-  .hero__con {
-    margin: 1em auto;
-    width: 768px;
+  .hero__con--title {
+    margin-top: 1em;
+    font-size: 3em;
   }
   .hero__con--info {
-    margin: 0em 6em;
-    margin-top: 4em;
+    margin: 0em 4em;
+    margin-top: 2em;
+    font-size: 1.5em;
   }
   .hero__con--ul {
     margin: 0em 7em;
     margin-top: 1em;
+  }
+}
+@media screen and (min-width: 800px) {
+  .hero__con {
+    margin: 1em auto;
+    width: 768px;
   }
 }
 </style>
