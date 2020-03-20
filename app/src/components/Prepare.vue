@@ -12,22 +12,16 @@
               v-b-tooltip.hover.right
               title="Current balance or current net profit up until the most recent
             month."
-              >Cash-at-Hand</b
-            >
+            >Cash-at-Hand</b>
           </li>
           <li>
             <b
               v-b-tooltip.hover.right
               title="Aproxiamte monthly revenue for your firm."
-              >Monthly Revenue</b
-            >
+            >Monthly Revenue</b>
           </li>
           <li>
-            <b
-              v-b-tooltip.hover.right
-              title="Aproximate monthly company expenses."
-              >Monthly Costs</b
-            >
+            <b v-b-tooltip.hover.right title="Aproximate monthly company expenses.">Monthly Costs</b>
           </li>
         </ul>
       </div>
@@ -57,8 +51,12 @@ export default {
   font-size: 2em;
   margin-top: 0em;
 }
+
 .form__con--info {
   margin-top: 1em;
+}
+.form__con--info li {
+  margin: 0em 1em;
 }
 
 @media screen and (min-width: 375px) {
@@ -79,7 +77,7 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .form__con--info {
-    margin: 0em 4em;
+    margin: 0em 0em;
     margin-top: 2em;
   }
 }

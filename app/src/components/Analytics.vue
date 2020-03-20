@@ -7,19 +7,10 @@
             Please enter the following values and click 'Compute' to simulate
             your impact assessment...
           </h3>
-          <div class="d-flex justify-content-center ">
-            <b-form-input
-              v-model="currentBalance"
-              placeholder="Cash-at-Hand"
-            ></b-form-input>
-            <b-form-input
-              v-model="burnRate"
-              placeholder="Monthly Costs"
-            ></b-form-input>
-            <b-form-input
-              v-model="monthlyRevenue"
-              placeholder="Monthly Revenue"
-            ></b-form-input>
+          <div class="d-flex justify-content-center">
+            <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+            <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+            <b-form-input v-model="monthlyRevenue" placeholder="Monthly Revenue"></b-form-input>
           </div>
           <div class="text-center">
             <br />
@@ -30,8 +21,7 @@
                 show = false;
               "
               variant="primary"
-              >Compute</b-button
-            >
+            >Compute</b-button>
             <br />
           </div>
         </div>
@@ -46,8 +36,8 @@
           </div>
         </div>
       </div>
-      <div>
-        <b-dropdown
+      <!-- <div> -->
+      <!-- <b-dropdown
           split
           split-variant="outline-primary"
           variant="primary"
@@ -78,9 +68,9 @@
             href="#"
             >Last Month</b-dropdown-item
           >
-        </b-dropdown>
+      </b-dropdown>-->
 
-        <b-dropdown
+      <!-- <b-dropdown
           split
           split-variant="outline-primary"
           variant="primary"
@@ -96,9 +86,9 @@
           <b-dropdown-item @click="selectedCountry = 'Mexico'" href="#"
             >Mexico</b-dropdown-item
           >
-        </b-dropdown>
+      </b-dropdown>-->
 
-        <b-dropdown
+      <!-- <b-dropdown
           split
           split-variant="outline-primary"
           variant="primary"
@@ -114,8 +104,8 @@
           <b-dropdown-item @click="selectedIndustry = 'Restaurant'" href="#"
             >Restaurant</b-dropdown-item
           >
-        </b-dropdown>
-      </div>
+      </b-dropdown>-->
+      <!-- </div> -->
       <b-card class="ana-graph-card medium-shadow bcard">
         <div class="text-center">
           <h3 class="text-black float-left">Cashflow</h3>
@@ -128,19 +118,10 @@
         <br />
       </b-card>
       <br />
-      <div class="d-flex justify-content-center ">
-        <b-form-input
-          v-model="currentBalance"
-          placeholder="Cash-at-Hand"
-        ></b-form-input>
-        <b-form-input
-          v-model="burnRate"
-          placeholder="Monthly Costs"
-        ></b-form-input>
-        <b-form-input
-          v-model="monthlyRevenue"
-          placeholder="Enter your monthly revenue"
-        ></b-form-input>
+      <div class="d-flex justify-content-center">
+        <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+        <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+        <b-form-input v-model="monthlyRevenue" placeholder="Enter your monthly revenue"></b-form-input>
       </div>
       <div class="text-center">
         <br />
@@ -161,8 +142,8 @@ const RiskLevel = () => import("@/components/RiskLevel.vue");
 import {
   BContainer,
   BCard,
-  BDropdown,
-  BDropdownItem,
+  // BDropdown,
+  // BDropdownItem,
   BFormInput,
   BOverlay
   // BButton
@@ -173,8 +154,8 @@ export default {
     Chart,
     BContainer,
     BCard,
-    BDropdown,
-    BDropdownItem,
+    // BDropdown,
+    // BDropdownItem,
     BFormInput,
     BOverlay,
     Runway,

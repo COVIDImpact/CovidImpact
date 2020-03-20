@@ -76,7 +76,7 @@ export default {};
     font-size: 3em;
   }
   .hero__con--info {
-    margin: 0em 4em;
+    margin: 0em 0em;
     margin-top: 2em;
     font-size: 1.5em;
   }
