@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="chart-con">
     <b-overlay :show="show" rounded="sm" @shown="onShown" @hidden="onHidden">
       <template v-slot:overlay>
         <div class="text-center">
@@ -107,6 +107,16 @@
       </b-dropdown>-->
       <!-- </div> -->
       <b-card class="ana-graph-card medium-shadow bcard">
+        <div class="d-flex justify-content-center">
+          <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <b-form-input v-model="monthlyRevenue" placeholder="Enter your monthly revenue"></b-form-input>
+        </div>
+        <div class="text-center">
+          <br />
+          <b-button @click="compute()" variant="primary">Compute</b-button>
+          <br />
+        </div>
         <div class="text-center">
           <h3 class="text-black float-left">Cashflow</h3>
 
@@ -118,16 +128,6 @@
         <br />
       </b-card>
       <br />
-      <div class="d-flex justify-content-center">
-        <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
-        <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
-        <b-form-input v-model="monthlyRevenue" placeholder="Enter your monthly revenue"></b-form-input>
-      </div>
-      <div class="text-center">
-        <br />
-        <b-button @click="compute()" variant="primary">Compute</b-button>
-        <br />
-      </div>
     </b-overlay>
   </b-container>
 </template>
@@ -471,9 +471,18 @@ export default {
   max-width: 768px;
   margin: 0 auto;
 }
+.chart-con {
+  margin-bottom: 4em;
+}
+@media screen and (min-width: 768px) {
+  .chart-con {
+    width: 768px;
+    margin: 0 auto;
+    margin-bottom: 4em;
+  }
+}
 @media screen and (min-width: 1200px) {
   .ana-graph-card {
-    width: 1000px;
     margin: 0 auto;
   }
 }
