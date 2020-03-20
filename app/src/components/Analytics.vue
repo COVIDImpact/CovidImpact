@@ -1,8 +1,52 @@
 <template>
   <b-container>
-    <b-card class="ana-graph-card medium-shadow">
-      <div class="text-center hst-cashflow-chrt">
-        <h3 class="text-black float-left">Cashflow</h3>
+    <b-overlay :show="show" rounded="sm" @shown="onShown" @hidden="onHidden">
+      <template v-slot:overlay>
+        <div class="text-center">
+          <h3 id="cancel-label">
+            Please enter the following values and click 'Compute' to simulate
+            your impact assessment...
+          </h3>
+          <div class="d-flex justify-content-center ">
+            <b-form-input
+              v-model="currentBalance"
+              placeholder="Cash-at-Hand"
+            ></b-form-input>
+            <b-form-input
+              v-model="burnRate"
+              placeholder="Monthly Costs"
+            ></b-form-input>
+            <b-form-input
+              v-model="monthlyRevenue"
+              placeholder="Monthly Revenue"
+            ></b-form-input>
+          </div>
+          <div class="text-center">
+            <br />
+            <b-button
+              ref="cancel"
+              @click="
+                compute();
+                show = false;
+              "
+              variant="primary"
+              >Compute</b-button
+            >
+            <br />
+          </div>
+        </div>
+      </template>
+      <div class="text-center con-graph">
+        <div class="row1">
+          <div class="column1">
+            <Runway></Runway>
+          </div>
+          <div class="column1">
+            <RiskLevel></RiskLevel>
+          </div>
+        </div>
+      </div>
+      <div>
         <b-dropdown
           split
           split-variant="outline-primary"
@@ -71,43 +115,57 @@
             >Restaurant</b-dropdown-item
           >
         </b-dropdown>
-        <div>
-          <chart
-            :height="200"
-            :chartData="datacollection"
-            :options="chartoptions"
-          ></chart>
-        </div>
       </div>
-    </b-card>
-    <br />
-    <div class="d-flex justify-content-center ">
-      <b-form-input
-        v-model="currentBalance"
-        placeholder="Enter your current balance"
-      ></b-form-input>
-      <b-form-input
-        v-model="burnRate"
-        placeholder="Enter your brun rate"
-      ></b-form-input>
-      <b-form-input
-        v-model="monthlyRevenue"
-        placeholder="Enter your monthly revenue"
-      ></b-form-input>
-    </div>
+      <b-card class="ana-graph-card medium-shadow bcard">
+        <div class="text-center">
+          <h3 class="text-black float-left">Cashflow</h3>
+
+          <div class="chartDiv">
+            <chart :chartData="datacollection" :options="chartoptions"></chart>
+          </div>
+        </div>
+        <br />
+        <br />
+      </b-card>
+      <br />
+      <div class="d-flex justify-content-center ">
+        <b-form-input
+          v-model="currentBalance"
+          placeholder="Cash-at-Hand"
+        ></b-form-input>
+        <b-form-input
+          v-model="burnRate"
+          placeholder="Monthly Costs"
+        ></b-form-input>
+        <b-form-input
+          v-model="monthlyRevenue"
+          placeholder="Enter your monthly revenue"
+        ></b-form-input>
+      </div>
+      <div class="text-center">
+        <br />
+        <b-button @click="compute()" variant="primary">Compute</b-button>
+        <br />
+      </div>
+    </b-overlay>
   </b-container>
 </template>
 
 <script>
 import Chart from "./Chart";
 import moment from "moment";
+// import { BButton } from "bootstrap-vue";
+const Runway = () => import("@/components/Runway.vue");
+const RiskLevel = () => import("@/components/RiskLevel.vue");
 
 import {
   BContainer,
   BCard,
   BDropdown,
   BDropdownItem,
-  BFormInput
+  BFormInput,
+  BOverlay
+  // BButton
 } from "bootstrap-vue";
 
 export default {
@@ -117,7 +175,10 @@ export default {
     BCard,
     BDropdown,
     BDropdownItem,
-    BFormInput
+    BFormInput,
+    BOverlay,
+    Runway,
+    RiskLevel
   },
   data() {
     return {
@@ -153,55 +214,35 @@ export default {
       selectedCountry: "Canada",
       selectedIndustry: "Retail",
       showChart: "loading",
-      cashInData: [
-        500,
-        400,
-        300,
-        400,
-        500,
-        600,
-        700,
-        800,
-        900,
-        1000,
-        1200,
-        1500
-      ],
-      cashOutData: [
-        600,
-        500,
-        400,
-        350,
-        300,
-        250,
-        225,
-        200,
-        300,
-        500,
-        600,
-        1000
-      ],
-      labels: [
-        "Mar, 2020",
-        "Feb, 2020",
-        "Jan, 2020",
-        "Dec, 2019",
-        "Nov, 2019",
-        "Oct, 2019",
-        "Sep, 2019",
-        "Aug, 2019",
-        "Jul, 2019",
-        "Jun, 2019",
-        "May, 2019",
-        "Apr, 2019"
-      ]
+      show: true,
+      balanceData: [100, 125, 150, 180, 100, 80, 50, 50, 40, 70, 100, 100],
+      revenueData: [0, 20, 40, 60, 90, 110, 150, 160, 150, 130, 130, 140],
+      labels: [],
+
+      isDead: false
     };
   },
   async mounted() {
-    this.fillData(this.cashInData, this.cashOutData, this.labels);
+    var now = moment();
+    for (let i = 0; i < 12; i++) {
+      this.labels.push(moment(now).format("MMM, YYYY"));
+      var month = now.add(1, "M").endOf("month");
+      now = month;
+    }
+    this.labels = this.labels.reverse();
+
+    this.fillData(this.balanceData, this.revenueData, this.labels);
     this.fillOptions();
   },
   methods: {
+    // onShown() {
+    //   // Focus the cancel button when the overlay is showing
+    //   this.$refs.cancel.focus();
+    // },
+    // onHidden() {
+    //   // Focus the show button when the overlay is removed
+    //   this.$refs.show.focus();
+    // },
     formatBalance(value) {
       if (!Number.isInteger(value)) {
         value = value.toFixed(2);
@@ -212,23 +253,23 @@ export default {
       return moment(date).format("MMM");
     },
     getYear() {
-      var cashInDataYear = this.cashInData;
-      var cashOutDataYear = this.cashOutData;
+      var balanceDataYear = this.balanceData;
+      var revenueDataYear = this.revenueData;
       var labelsYear = this.labels;
 
-      this.fillData(cashInDataYear, cashOutDataYear, labelsYear);
+      this.fillData(balanceDataYear, revenueDataYear, labelsYear);
     },
     getQuarter() {
-      var cashInDataQuarter = this.cashInData.slice(0, 3);
-      var cashOutDataQuarter = this.cashOutData.slice(0, 3);
+      var balanceDataQuarter = this.balanceData.slice(0, 3);
+      var revenueDataQuarter = this.revenueData.slice(0, 3);
       var labelsQuarter = this.labels.slice(0, 3);
-      this.fillData(cashInDataQuarter, cashOutDataQuarter, labelsQuarter);
+      this.fillData(balanceDataQuarter, revenueDataQuarter, labelsQuarter);
     },
     getMonth() {
-      var cashInDataQuarter = this.cashInData.slice(0, 1);
-      var cashOutDataQuarter = this.cashOutData.slice(0, 1);
+      var balanceDataQuarter = this.balanceData.slice(0, 1);
+      var revenueDataQuarter = this.revenueData.slice(0, 1);
       var labelsQuarter = this.labels.slice(0, 1);
-      this.fillData(cashInDataQuarter, cashOutDataQuarter, labelsQuarter);
+      this.fillData(balanceDataQuarter, revenueDataQuarter, labelsQuarter);
     },
     getSuffix(sum) {
       var suffix = "";
@@ -237,34 +278,68 @@ export default {
       }
       return suffix;
     },
-    fillData(cashInData, cashOutData, labels) {
+    fillData(balanceData, revenueData, labels) {
       this.datacollection = {
         labels: labels,
         datasets: [
           {
-            label: "Current Balance",
+            label: "Starting Balance",
             backgroundColor: "#33F9FF",
             borderColor: "#9400D3",
             borderWidth: 3,
-            data: cashInData,
+            data: balanceData,
             type: "line"
           },
           {
-            label: "Average Monthly Expenses",
+            label: "Average Monthly Revenues",
             backgroundColor: "#9400D3",
             borderColor: "#191970",
             borderWidth: 3,
-            data: cashOutData,
+            data: revenueData,
             type: "line"
           }
         ]
       };
     },
+    compute() {
+      this.updateCurrentBalance();
+      this.fillData(this.balanceData, this.revenueData, this.labels);
+    },
+    updateCurrentBalance() {
+      var updatedBalance = this.currentBalance;
+      if (!(updatedBalance === "")) {
+        updatedBalance = parseInt(this.currentBalance);
+      } else updatedBalance = 0;
+
+      var updatedRevenue = this.monthlyRevenue;
+      // var originalRevenue;
+      if (!(updatedRevenue === "")) {
+        updatedRevenue = parseInt(this.monthlyRevenue);
+        // originalRevenue = updatedRevenue;
+      } else updatedRevenue = 0;
+
+      var updatedBurnRate = this.burnRate;
+      if (!(updatedBurnRate === "")) {
+        updatedBurnRate = parseInt(this.burnRate);
+      } else updatedBurnRate = 0;
+
+      for (let i = 0; i < 12; i++) {
+        this.balanceData[i] = updatedBalance;
+        this.revenueData[i] = updatedRevenue;
+        updatedBalance -= updatedBurnRate;
+        updatedBalance += updatedRevenue;
+        // originalRevenue += updatedRevenue;
+      }
+      this.balanceData = this.balanceData.reverse();
+    },
+    updateBurnRate() {},
+    updateRevenue() {},
     fillOptions() {
       var ref = this;
       this.chartoptions = {
         onClick: this.handle,
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           xAxes: [
             {
@@ -290,6 +365,8 @@ export default {
               ticks: {
                 fontSize: 20,
                 userCallback: function(value) {
+                  value = parseFloat(value);
+
                   var suffix = ref.getSuffix(value);
                   var roundedValue =
                     Math.abs(value) > 999
@@ -318,7 +395,20 @@ export default {
               var datasets = this.chart.data.datasets;
               var legend = datasets.map((dataset, i) => {
                 var label = dataset.label;
-                var sum = dataset.data.reduce((a, b) => a + b, 0);
+
+                var sum = 0;
+                if (label === "Starting Balance") {
+                  if (!(ref.currentBalance === "")) {
+                    sum = parseFloat(ref.currentBalance);
+                  }
+                } else if (label === "Average Monthly Revenues") {
+                  if (!(ref.monthlyRevenue === "")) {
+                    sum = parseFloat(ref.monthlyRevenue);
+                  }
+                }
+                // } else {
+                //   sum = dataset.data.reduce((a, b) => a + b, 0);
+                // }
                 var suffix = ref.getSuffix(sum);
                 sum = Math.abs(sum);
                 sum = ref.formatBalance(sum);
@@ -374,8 +464,31 @@ export default {
 .card {
   padding: 10px 10px;
 }
+.bcard {
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+/* .chartDiv {
+  max-height: 100px;
+  max-width: 50px;
+} */
 .analytics-dropdown {
   float: right;
+}
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.column1 {
+  display: flex;
+  flex-direction: column;
+}
+.con-graph {
+  max-width: 768px;
+  margin: 0 auto;
 }
 @media screen and (min-width: 1200px) {
   .ana-graph-card {

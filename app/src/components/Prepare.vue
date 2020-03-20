@@ -1,4 +1,3 @@
-
 <template>
   <div class="form">
     <div class="form__con">
@@ -6,24 +5,44 @@
       <div class="form__con--info">
         Here's what you need to run your impact assessment:
         <br />
+        <br />
         <ul>
           <li>
-            <b>Cash-at-Hand:</b> Current balance or current net profit up until the most recent month.
+            <b
+              v-b-tooltip.hover.right
+              title="Current balance or current net profit up until the most recent
+            month."
+              >Cash-at-Hand</b
+            >
           </li>
           <li>
-            <b>Monthly Revenue:</b> Aproxiamte monthly revenue for your firm.
+            <b
+              v-b-tooltip.hover.right
+              title="Aproxiamte monthly revenue for your firm."
+              >Monthly Revenue</b
+            >
           </li>
           <li>
-            <b>Monthly Costs:</b> Aproximate monthly company expenses.
+            <b
+              v-b-tooltip.hover.right
+              title="Aproximate monthly company expenses."
+              >Monthly Costs</b
+            >
           </li>
         </ul>
       </div>
     </div>
+    <br />
   </div>
 </template>
 
 <script>
-export default {};
+// import BTooltip from "bootstrap-vue";
+export default {
+  components: {
+    // BTooltip
+  }
+};
 </script>
 
 <style>

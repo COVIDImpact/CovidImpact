@@ -1,17 +1,17 @@
 <template>
   <div class="text-center">
-    <br />
+    <!-- <br />
     <b-button variant="primary">Compute</b-button>
-    <br />
+    <br /> -->
   </div>
 </template>
 
 <script>
-import { BButton } from "bootstrap-vue";
+// import { BButton } from "bootstrap-vue";
 
 export default {
   components: {
-    BButton
+    // BButton
   }
 };
 </script>

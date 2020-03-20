@@ -4,7 +4,7 @@
     <Navbar></Navbar>
     <Hero></Hero>
     <Prepare></Prepare>
-    <div class="text-center con-graph">
+    <!-- <div class="text-center con-graph">
       <div class="row1">
         <div class="column1">
           <Runway></Runway>
@@ -13,7 +13,7 @@
           <RiskLevel></RiskLevel>
         </div>
       </div>
-    </div>
+    </div> -->
     <Analytics></Analytics>
     <Scenarios></Scenarios>
     <!-- <Timeline></Timeline> -->
@@ -28,8 +28,8 @@ const Hero = () => import("@/components/Hero.vue");
 const Prepare = () => import("@/components/Prepare.vue");
 // const Timeline = () => import("@/components/Timeline.vue");
 const Analytics = () => import("@/components/Analytics.vue");
-const Runway = () => import("@/components/Runway.vue");
-const RiskLevel = () => import("@/components/RiskLevel.vue");
+// const Runway = () => import("@/components/Runway.vue");
+// const RiskLevel = () => import("@/components/RiskLevel.vue");
 const Scenarios = () => import("@/components/Scenarios.vue");
 const Footer = () => import("@/components/Footer.vue");
 
@@ -42,8 +42,8 @@ export default {
     Prepare,
     // Timeline,
     Analytics,
-    Runway,
-    RiskLevel,
+    // Runway,
+    // RiskLevel,
     Scenarios,
     Footer
   }
@@ -55,7 +55,7 @@ export default {
 .home {
   width: 100%;
 }
-.row1 {
+/* .row1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -68,5 +68,5 @@ export default {
 .con-graph {
   max-width: 768px;
   margin: 0 auto;
-}
+} */
 </style>
