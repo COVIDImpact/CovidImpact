@@ -1,11 +1,14 @@
 <template>
   <div class="hero">
     <div class="hero__con">
-      <h1 class="hero__con--title">COVID-19 Business Survival Guide</h1>
+      <h1 class="hero__con--title">COVID-19 Business Impact Asessment</h1>
       <div class="hero__con--info">
-        <b>#CovidImpact</b> was created to help Canadian companies survive the COVID-19 pandemic.
+        <b>#CovidImpact</b> was created to help Canadian companies survive the
+        COVID-19 pandemic.
         <br />
-        <br />SARS-CoV-2 is a highly infectious and potentially deadly virus that causes a respiratory disease called COVID-19 or just simply coronavirus.
+        <br />SARS-CoV-2 is a highly infectious and potentially deadly virus
+        that causes a respiratory disease called COVID-19 or just simply
+        coronavirus.
       </div>
       <!-- <svg
         class="hero__con--heart"
