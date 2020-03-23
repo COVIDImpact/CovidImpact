@@ -15,7 +15,8 @@
     "moment": "^2.24.0",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.0",
-    "vue-i18n": "^8.15.5"
+    "vue-i18n": "^8.15.5",
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",

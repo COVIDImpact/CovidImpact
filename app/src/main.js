@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import router from "./router";
 import {
   DropdownPlugin,
   VBModalPlugin,
@@ -19,5 +20,6 @@ Vue.use(TooltipPlugin);
 Vue.config.productionTip = false;
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount("#app");

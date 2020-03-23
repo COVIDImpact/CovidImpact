@@ -4,13 +4,74 @@
       <template v-slot:overlay>
         <div class="text-center">
           <h3 id="cancel-label">
-            Please enter the following values and click 'Compute' to simulate
-            your impact assessment...
+            Please enter the following and click 'Compute' to simulate your
+            impact assessment...
+            <br />
+            <br />
+
+            <div class="text-left">
+              <h4>
+                <ul>
+                  <li>
+                    <b
+                      v-b-tooltip.hover.right
+                      title="Current balance or current net profit up until the most recent
+            month."
+                      >Cash-at-Hand</b
+                    >
+                  </li>
+                  <li>
+                    <b
+                      v-b-tooltip.hover.right
+                      title="Aproxiamte monthly revenue for your firm."
+                      >Monthly Revenue</b
+                    >
+                  </li>
+                  <li>
+                    <b
+                      v-b-tooltip.hover.right
+                      title="Aproximate monthly company expenses."
+                      >Monthly Costs</b
+                    >
+                  </li>
+                  <li>
+                    <b
+                      v-b-tooltip.hover.right
+                      title="There are three possible scenarios that relate to the duration the pandemic will last. Short means 3 months, Medium is 6 months and Long is 9+ months."
+                      >Scenario</b
+                    >
+                  </li>
+                </ul>
+              </h4>
+            </div>
           </h3>
+          <br />
           <div class="d-flex justify-content-center">
-            <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
-            <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
-            <b-form-input v-model="monthlyRevenue" placeholder="Monthly Revenue"></b-form-input>
+            <b-form-input
+              v-model="currentBalance"
+              placeholder="Cash"
+            ></b-form-input>
+            <b-form-input v-model="burnRate" placeholder="Costs"></b-form-input>
+            <b-form-input
+              v-model="monthlyRevenue"
+              placeholder="Revenue"
+            ></b-form-input>
+            <b-dropdown
+              split
+              split-variant="outline-primary"
+              variant="primary"
+              :text="selectedScenario"
+            >
+              <b-dropdown-item @click="selectedScenario = 'Short'" href="#"
+                >Short</b-dropdown-item
+              >
+              <b-dropdown-item @click="selectedScenario = 'Medium'" href="#"
+                >Medium</b-dropdown-item
+              >
+              <b-dropdown-item @click="selectedScenario = 'Long'" href="#"
+                >Long'</b-dropdown-item
+              >
+            </b-dropdown>
           </div>
           <div class="text-center">
             <br />
@@ -21,7 +82,8 @@
                 show = false;
               "
               variant="primary"
-            >Compute</b-button>
+              >Compute</b-button
+            >
             <br />
           </div>
         </div>
@@ -36,81 +98,37 @@
           </div>
         </div>
       </div>
-      <!-- <div> -->
-      <!-- <b-dropdown
-          split
-          split-variant="outline-primary"
-          variant="primary"
-          :text="selectedItem"
-          class="analytics-dropdown m-2"
-        >
-          <b-dropdown-item
-            @click="
-              getYear();
-              selectedItem = 'Last Year';
-            "
-            href="#"
-            >Last Year</b-dropdown-item
-          >
-          <b-dropdown-item
-            @click="
-              getQuarter();
-              selectedItem = 'Last Quarter';
-            "
-            href="#"
-            >Last Quarter</b-dropdown-item
-          >
-          <b-dropdown-item
-            @click="
-              getMonth();
-              selectedItem = 'Last Month';
-            "
-            href="#"
-            >Last Month</b-dropdown-item
-          >
-      </b-dropdown>-->
 
-      <!-- <b-dropdown
-          split
-          split-variant="outline-primary"
-          variant="primary"
-          :text="selectedCountry"
-          class="analytics-dropdown m-2"
-        >
-          <b-dropdown-item @click="selectedCountry = 'Canada'" href="#"
-            >Canada</b-dropdown-item
-          >
-          <b-dropdown-item @click="selectedCountry = 'United States'" href="#"
-            >United States</b-dropdown-item
-          >
-          <b-dropdown-item @click="selectedCountry = 'Mexico'" href="#"
-            >Mexico</b-dropdown-item
-          >
-      </b-dropdown>-->
-
-      <!-- <b-dropdown
-          split
-          split-variant="outline-primary"
-          variant="primary"
-          :text="selectedIndustry"
-          class="analytics-dropdown m-2"
-        >
-          <b-dropdown-item @click="selectedIndustry = 'Retail'" href="#"
-            >Retail</b-dropdown-item
-          >
-          <b-dropdown-item @click="selectedIndustry = 'SaaS'" href="#"
-            >SaaS</b-dropdown-item
-          >
-          <b-dropdown-item @click="selectedIndustry = 'Restaurant'" href="#"
-            >Restaurant</b-dropdown-item
-          >
-      </b-dropdown>-->
-      <!-- </div> -->
       <b-card class="ana-graph-card medium-shadow bcard">
         <div class="d-flex justify-content-center">
-          <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
-          <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
-          <b-form-input v-model="monthlyRevenue" placeholder="Enter your monthly revenue"></b-form-input>
+          <b-form-input
+            v-model="currentBalance"
+            placeholder="Cash-at-Hand"
+          ></b-form-input>
+          <b-form-input
+            v-model="burnRate"
+            placeholder="Monthly Costs"
+          ></b-form-input>
+          <b-form-input
+            v-model="monthlyRevenue"
+            placeholder="Monthly Revenue"
+          ></b-form-input>
+          <b-dropdown
+            split
+            split-variant="outline-primary"
+            variant="primary"
+            :text="selectedScenario"
+          >
+            <b-dropdown-item @click="selectedScenario = 'Short'" href="#"
+              >Short</b-dropdown-item
+            >
+            <b-dropdown-item @click="selectedScenario = 'Medium'" href="#"
+              >Medium</b-dropdown-item
+            >
+            <b-dropdown-item @click="selectedScenario = 'Long'" href="#"
+              >Long'</b-dropdown-item
+            >
+          </b-dropdown>
         </div>
         <div class="text-center">
           <br />
@@ -124,10 +142,7 @@
             <chart :chartData="datacollection" :options="chartoptions"></chart>
           </div>
         </div>
-        <br />
-        <br />
       </b-card>
-      <br />
     </b-overlay>
   </b-container>
 </template>
@@ -142,8 +157,8 @@ const RiskLevel = () => import("@/components/RiskLevel.vue");
 import {
   BContainer,
   BCard,
-  // BDropdown,
-  // BDropdownItem,
+  BDropdown,
+  BDropdownItem,
   BFormInput,
   BOverlay
   // BButton
@@ -154,8 +169,8 @@ export default {
     Chart,
     BContainer,
     BCard,
-    // BDropdown,
-    // BDropdownItem,
+    BDropdown,
+    BDropdownItem,
     BFormInput,
     BOverlay,
     Runway,
@@ -191,9 +206,7 @@ export default {
           ]
         }
       },
-      selectedItem: "Last Year",
-      selectedCountry: "Canada",
-      selectedIndustry: "Retail",
+      selectedScenario: "Short",
       showChart: "loading",
       show: true,
       balanceData: [100, 125, 150, 180, 100, 80, 50, 50, 40, 70, 100, 100],
@@ -452,7 +465,7 @@ export default {
   margin-top: 0em;
 }
 .bcard {
-  height: 600px;
+  height: 650px;
   width: 100%;
   position: relative;
 }
