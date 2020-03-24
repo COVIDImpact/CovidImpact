@@ -5,9 +5,9 @@
         <b>#CovidImpact</b>
       </b-link>
       <div class="navbar__con__lang">
-        <div class="navbar__con__lang--option">English</div>
-        <div class="navbar__con__lang--option">Français</div>
-        <div class="navbar__con__lang--option">简体中文</div>
+        <b-link to="/" class="navbar__con__lang--option">English</b-link>
+        <div class="navbar__con__lang--option not-ready">Français</div>
+        <div class="navbar__con__lang--option not-ready">简体中文</div>
       </div>
     </div>
   </div>
@@ -43,6 +43,20 @@ export default {
 }
 .navbar__con__lang {
   margin-right: 1em;
+}
+
+.navbar__con__lang--option {
+  text-decoration: none;
+}
+.navbar__con__lang--option:hover {
+  color: #f958ff;
+}
+
+.not-ready {
+  cursor: not-allowed;
+}
+.not-ready:hover {
+  color: black;
 }
 
 @media screen and (min-width: 375px) {

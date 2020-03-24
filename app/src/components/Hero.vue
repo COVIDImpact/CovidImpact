@@ -57,7 +57,16 @@
         </div>
       </div>
       <div class="hero__con--row">
-        <div class="hero__con-row--col"></div>
+        <div class="hero__con-row--col">
+          <b-link to="news">
+            <b-img
+              class="hero_con--icon2"
+              fluid
+              :src="require('../assets/icons/news.svg')"
+            />
+            <b-card class="hero__con--btn">COVID-19 News for Business</b-card>
+          </b-link>
+        </div>
         <div class="hero__con-row--col"></div>
       </div>
     </div>
