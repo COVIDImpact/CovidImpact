@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 const Home = () => import("../pages/Home.vue");
 const Assessment = () => import("../pages/Assessment.vue");
 const FinancialAid = () => import("../pages/FinancialAid.vue");
+const News = () => import("../pages/News.vue");
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
     path: "/financial-aid",
     name: "financial-aid",
     component: FinancialAid
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: News
   }
 ];
 
