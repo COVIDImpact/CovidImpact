@@ -52,7 +52,7 @@
         <b-button v-b-modal.modal-1 class="footer__con__lang--button"
           >Privacy Policy</b-button
         >
-        <b-button v-b-modal.modal-2 class="footer__con__lang--button"
+        <b-button v-b-modal.modal-2 class="footer__con__lang--button "
           >Disclaimer</b-button
         >
       </div>
@@ -101,6 +101,11 @@ export default {};
 }
 .footer__con__lang--button:hover {
   color: #f958ff;
+}
+.legal-btn {
+  background-color: #f958ff;
+  outline: none;
+  border: none;
 }
 
 @media screen and (min-width: 375px) {

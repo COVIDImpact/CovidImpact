@@ -4,7 +4,7 @@
       <div class="hero__con--row">
         <h1 class="hero__con--title">
           <!-- How will COVID-19 affect your business? -->
-          COVID-19 Small Business Care Package
+          COVID-19 Business Care Package
         </h1>
 
         <!-- <b-img
@@ -21,8 +21,9 @@
         their business. Here’s what you need to know: -->
         Welcome to your Small Business Care Bundle put together by the
         <b-link href="http://www.fostrum.com"><b>Fostrum</b></b-link>
-        Team. CovidImpact immunizes your business during the pandemic with an
-        updated list of financial programs and an assessment tool to simulate
+        Team.
+        <br /><br />CovidImpact immunizes your business during the pandemic with
+        an updated list of financial programs and an assessment tool to simulate
         the impact of Coronavirus on your business!
       </div>
       <!-- <ul class="hero__con--ul">
@@ -34,7 +35,7 @@
         </li>
       </ul> -->
       <div class="hero__con--row">
-        <div class="hero__con-row--col">
+        <div class="hero__con-row--col colone">
           <b-link to="financial-aid">
             <b-img
               class="hero_con--icon1"
@@ -44,7 +45,7 @@
             <b-card class="hero__con--btn">Financial Aid</b-card>
           </b-link>
         </div>
-        <div class="hero__con-row--col">
+        <div class="hero__con-row--col coltwo">
           <b-link to="assessment">
             <b-img
               class="hero_con--icon2"
@@ -105,16 +106,10 @@ export default {
   fill: #f958ff;
 }
 .hero_con--icon1 {
-  width: 35em;
-  display: flex;
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
 }
 .hero_con--icon2 {
-  width: 35em;
-  display: flex;
-  margin: 0 auto;
-  text-align: center;
+  width: 100%;
 }
 a {
   color: inherit;
@@ -125,10 +120,13 @@ a {
   display: flex;
   color: white;
   font-weight: bolder;
-  width: 40%;
+  width: 100%;
   margin: auto;
   margin-top: 1em;
   border-radius: 40px;
+  text-decoration: none;
+  border-bottom: none;
+  border: none;
 }
 
 .hero__con--row {
@@ -139,7 +137,8 @@ a {
 }
 
 .hero__con-row--col {
-  width: 50%;
+  width: 100%;
+  margin-top: 2em;
 }
 @media screen and (min-width: 375px) {
   .hero__con--info {
@@ -159,7 +158,8 @@ a {
   }
   .hero__con--info {
     margin: 0em 6em;
-    margin-top: 4em;
+    margin-top: 2em;
+    font-size: 1.25em;
   }
   .hero__con--ul {
     margin: 0em 7em;
@@ -167,6 +167,15 @@ a {
   }
   .hero__con--row {
     flex-direction: row;
+  }
+  .hero__con-row--col {
+    margin-top: 4em;
+  }
+  .colone {
+    margin-right: 1em;
+  }
+  .coltwo {
+    margin-left: 1em;
   }
 }
 </style>

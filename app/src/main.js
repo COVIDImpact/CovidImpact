@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import axios from "axios";
+import VueAxios from "vue-axios";
 import {
   DropdownPlugin,
   VBModalPlugin,
@@ -17,6 +19,7 @@ Vue.use(VBModalPlugin);
 Vue.use(ModalPlugin);
 Vue.use(ButtonPlugin);
 Vue.use(TooltipPlugin);
+Vue.use(VueAxios, axios);
 Vue.config.productionTip = false;
 
 new Vue({

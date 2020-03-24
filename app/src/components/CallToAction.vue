@@ -4,17 +4,64 @@
       <div class="cta__con--info">
         Sign-up for the latest updates and small businesss tools!
       </div>
-      <input
-        class="cta__con--button"
-        type="text"
-        placeholder="example@mail.com"
-      />
+      <form class="cta__con__form" @submit="formSubmit">
+        <input
+          class="cta__con__form--input"
+          type="text"
+          placeholder="example@mail.com"
+          v-model="email"
+        />
+        <button class="cta__con__form--button">Send</button>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+const username = "anystring";
+const password = "5f535004ac2f49e6fe2ccd12137eeebe-us19";
+const token = Buffer.from(`${username}:${password}`, "utf8").toString("base64");
+const url = "https://us19.api.mailchimp.com/3.0/lists/42e2e51d8f/members/";
+
+export default {
+  data() {
+    return {
+      email: ""
+    };
+  },
+  methods: {
+    formSubmit(e) {
+      e.preventDefault();
+      let currentObj = this;
+      this.axios
+        .post(
+          url,
+          {
+            headers: {
+              Authorization: `Basic ${token}`,
+              "Content-Type": "application/json"
+            }
+          },
+          {
+            email_address: this.email,
+            status: "subscribed",
+            merge_fields: {
+              FNAME: "",
+              LNAME: ""
+            }
+          }
+        )
+        .then(response => {
+          console.log(response);
+          currentObj.output = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+          currentObj.output = error;
+        });
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -35,14 +82,33 @@ export default {};
 .cta__con--info {
   color: white;
 }
-.cta__con--button {
+.cta__con__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cta__con__form--input {
   margin-top: 0.5em;
-  border-radius: 7px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+
   border: none;
   text-indent: 1em;
   width: 100%;
   font-size: 1em;
   line-height: 2em;
+}
+.cta__con__form--button {
+  margin-top: 0.5em;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border: none;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0em 1em;
+  background-color: #edf2f7;
+  color: rgb(39, 37, 37);
 }
 
 @media screen and (min-width: 425px) {

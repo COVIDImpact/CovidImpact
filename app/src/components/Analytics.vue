@@ -99,7 +99,7 @@
         </div>
       </div>
 
-      <b-card class="ana-graph-card medium-shadow bcard">
+      <b-card class="ana-graph-card medium-shadow bcard  styled-con">
         <div class="d-flex justify-content-center">
           <b-form-input
             v-model="currentBalance"
@@ -492,6 +492,12 @@ export default {
 }
 .chart-con {
   margin-bottom: 4em;
+  outline: none;
+  border: none;
+}
+.styled-con {
+  outline: none;
+  border: none;
 }
 @media screen and (min-width: 768px) {
   .chart-con {
