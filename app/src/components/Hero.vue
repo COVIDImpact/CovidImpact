@@ -1,36 +1,26 @@
 <template>
   <div class="hero">
     <div class="hero__con">
-<<<<<<< HEAD
-      <h1 class="hero__con--title">COVID-19 Business Impact Asessment</h1>
-      <div class="hero__con--info">
-        <b>#CovidImpact</b> was created to help Canadian companies survive the
-        COVID-19 pandemic.
-        <br />
-        <br />SARS-CoV-2 is a highly infectious and potentially deadly virus
-        that causes a respiratory disease called COVID-19 or just simply
-        coronavirus.
-=======
       <div class="hero__con--row">
         <h1 class="hero__con--title">
           <!-- How will COVID-19 affect your business? -->
-          Covid-19 Small Business Care Bundle
+          COVID-19 Small Business Care Package
         </h1>
 
-        <b-img
+        <!-- <b-img
           class="heart1"
           :src="require('../assets/logos/heart.png')"
           alt="Heart Icon"
           fluid
           width="200%"
           height="100%"
-        />
+        /> -->
       </div>
       <div class="hero__con--info">
         <!-- We created an app to help Canadian’s find out how COVID-19 will affect
         their business. Here’s what you need to know: -->
         Welcome to your Small Business Care Bundle put together by the
-        <b-link href="http://www.fostrum.com">Fostrum</b-link>
+        <b-link href="http://www.fostrum.com"><b>Fostrum</b></b-link>
         Team. CovidImpact immunizes your business during the pandemic with an
         updated list of financial programs and an assessment tool to simulate
         the impact of Coronavirus on your business!
@@ -43,24 +33,31 @@
           <b>Monthly Revenue</b>(we’ll take over the rest)
         </li>
       </ul> -->
-      <div class="column1">
-        <b-link to="financialaid">
-          <b-img
-            class="hero_con--icon1"
-            fluid
-            :src="require('../assets/icons/smb.svg')"
-          />
-          <b-card class="hero__con--btn">Financial Aid</b-card>
-        </b-link>
-        <b-link to="assessment">
-          <b-img
-            class="hero_con--icon2"
-            fluid
-            :src="require('../assets/icons/analytics.svg')"
-          />
-          <b-card class="hero__con--btn">Business Assessment Tool</b-card>
-        </b-link>
->>>>>>> ffc4ff8b8ec8d78981f61b9e56a2fc65a039aa7f
+      <div class="hero__con--row">
+        <div class="hero__con-row--col">
+          <b-link to="financial-aid">
+            <b-img
+              class="hero_con--icon1"
+              fluid
+              :src="require('../assets/icons/bus.svg')"
+            />
+            <b-card class="hero__con--btn">Financial Aid</b-card>
+          </b-link>
+        </div>
+        <div class="hero__con-row--col">
+          <b-link to="assessment">
+            <b-img
+              class="hero_con--icon2"
+              fluid
+              :src="require('../assets/icons/analytics.svg')"
+            />
+            <b-card class="hero__con--btn">Business Assessment Tool</b-card>
+          </b-link>
+        </div>
+      </div>
+      <div class="hero__con--row">
+        <div class="hero__con-row--col"></div>
+        <div class="hero__con-row--col"></div>
       </div>
     </div>
   </div>
@@ -82,7 +79,6 @@ export default {
 .hero {
   width: 100%;
 }
-
 .hero__con {
   margin: 1em 1em;
 }
@@ -112,14 +108,12 @@ export default {
   width: 35em;
   display: flex;
   margin: 0 auto;
-  margin-top: 2em;
   text-align: center;
 }
 .hero_con--icon2 {
-  width: 40em;
+  width: 35em;
   display: flex;
   margin: 0 auto;
-  margin-top: 2em;
   text-align: center;
 }
 a {
@@ -135,6 +129,17 @@ a {
   margin: auto;
   margin-top: 1em;
   border-radius: 40px;
+}
+
+.hero__con--row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__con-row--col {
+  width: 50%;
 }
 @media screen and (min-width: 375px) {
   .hero__con--info {
@@ -160,14 +165,8 @@ a {
     margin: 0em 7em;
     margin-top: 1em;
   }
-}
-<<<<<<< HEAD
-@media screen and (min-width: 800px) {
-  .hero__con {
-    margin: 1em auto;
-    width: 768px;
+  .hero__con--row {
+    flex-direction: row;
   }
 }
-=======
->>>>>>> ffc4ff8b8ec8d78981f61b9e56a2fc65a039aa7f
 </style>

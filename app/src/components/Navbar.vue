@@ -1,9 +1,9 @@
 <template>
   <div class="navbar">
     <div class="navbar__con">
-      <div class="navbar__con--title">
+      <b-link to="/" class="navbar__con--title">
         <b>#CovidImpact</b>
-      </div>
+      </b-link>
       <div class="navbar__con__lang">
         <div class="navbar__con__lang--option">English</div>
         <div class="navbar__con__lang--option">Français</div>
@@ -14,7 +14,13 @@
 </template>
 
 <script>
-export default {};
+import { BLink } from "bootstrap-vue";
+
+export default {
+  components: {
+    BLink
+  }
+};
 </script>
 
 <style scoped>
@@ -30,6 +36,10 @@ export default {};
 }
 .navbar__con--title {
   margin-left: 1em;
+  text-decoration: none;
+}
+.navbar__con--title:hover {
+  color: #f958ff;
 }
 .navbar__con__lang {
   margin-right: 1em;

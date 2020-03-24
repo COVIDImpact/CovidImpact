@@ -19,8 +19,8 @@ const routes = [
     component: Assessment
   },
   {
-    path: "/financialaid",
-    name: "financialaid",
+    path: "/financial-aid",
+    name: "financial-aid",
     component: FinancialAid
   }
 ];
