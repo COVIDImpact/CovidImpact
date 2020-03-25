@@ -116,10 +116,24 @@ export default {
 }
 .hero_con--icon1 {
   width: 100%;
+  transition: transform 0.2s; /* Animation */
 }
 .hero_con--icon2 {
   width: 100%;
+  transition: transform 0.2s; /* Animation */
 }
+
+.hero_con--icon1:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.hero_con--icon2:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 a {
   color: inherit;
 }
