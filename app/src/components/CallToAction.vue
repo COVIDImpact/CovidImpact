@@ -9,7 +9,14 @@
           placeholder="example@mail.com"
           v-model="email"
         />
-        <button class="cta__con__form--button">Send</button>
+        <div>
+          <div v-if="sent">
+            <button class="cta__con__form--button">...</button>
+          </div>
+          <div v-else>
+            <button class="cta__con__form--button">Send</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -25,12 +32,14 @@ const url =
 export default {
   data() {
     return {
-      email: ""
+      email: "",
+      sent: false
     };
   },
   methods: {
     formSubmit(e) {
       e.preventDefault();
+      this.sent = true;
       let currentObj = this;
       this.axios
         .post(url, {
@@ -39,10 +48,15 @@ export default {
         .then(response => {
           console.log(response);
           currentObj.output = response.data;
+          this.sent = false;
         })
         .catch(error => {
           console.log(error);
           currentObj.output = error;
+          this.sent = false;
+        })
+        .finally(() => {
+          this.sent = false;
         });
     }
   }
