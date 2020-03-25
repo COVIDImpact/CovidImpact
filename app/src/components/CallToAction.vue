@@ -1,9 +1,7 @@
 <template>
   <div class="cta">
     <div class="cta__con">
-      <div class="cta__con--info">
-        Sign-up for the latest updates and small businesss tools!
-      </div>
+      <div class="cta__con--info">Sign-up for the latest updates and small businesss tools!</div>
       <form class="cta__con__form" @submit="formSubmit">
         <input
           class="cta__con__form--input"
@@ -18,10 +16,11 @@
 </template>
 
 <script>
-const username = "anystring";
-const password = "5f535004ac2f49e6fe2ccd12137eeebe-us19";
-const token = Buffer.from(`${username}:${password}`, "utf8").toString("base64");
-const url = "https://us19.api.mailchimp.com/3.0/lists/42e2e51d8f/members/";
+// const username = "anystring";
+// const password = "5f535004ac2f49e6fe2ccd12137eeebe-us19";
+// const token = Buffer.from(`${username}:${password}`, "utf8").toString("base64");
+const url =
+  "https://5ha6in59k3.execute-api.us-east-1.amazonaws.com/dev/addToMemberList";
 
 export default {
   data() {
@@ -34,23 +33,9 @@ export default {
       e.preventDefault();
       let currentObj = this;
       this.axios
-        .post(
-          url,
-          {
-            headers: {
-              Authorization: `Basic ${token}`,
-              "Content-Type": "application/json"
-            }
-          },
-          {
-            email_address: this.email,
-            status: "subscribed",
-            merge_fields: {
-              FNAME: "",
-              LNAME: ""
-            }
-          }
-        )
+        .post(url, {
+          emailAddress: this.email
+        })
         .then(response => {
           console.log(response);
           currentObj.output = response.data;
