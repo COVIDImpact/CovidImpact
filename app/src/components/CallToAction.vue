@@ -92,7 +92,6 @@ export default {
   margin-top: 0.5em;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
-
   border: none;
   text-indent: 1em;
   width: 100%;
@@ -109,6 +108,10 @@ export default {
   padding: 0em 1em;
   background-color: #edf2f7;
   color: rgb(39, 37, 37);
+}
+
+.cta__con__form--button:hover {
+  background-color: #e0e3e6;
 }
 
 @media screen and (min-width: 425px) {

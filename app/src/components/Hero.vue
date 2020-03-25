@@ -36,7 +36,7 @@
       </ul> -->
       <div class="hero__con--row">
         <div class="hero__con-row--col colone">
-          <b-link to="financial-aid">
+          <b-link class="hero__con--link" to="financial-aid">
             <b-img
               class="hero_con--icon1"
               fluid
@@ -136,6 +136,17 @@ a {
   text-decoration: none;
   border-bottom: none;
   border: none;
+  text-decoration: underline;
+  text-decoration-color: #f958ff;
+}
+
+.hero__con--btn:hover {
+  background: #f52dfc;
+  text-decoration-color: #f52dfc;
+}
+
+.hero__con--link {
+  text-decoration: none;
 }
 
 .hero__con--row {
