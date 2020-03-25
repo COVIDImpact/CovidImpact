@@ -14,15 +14,17 @@
           fluid
           width="200%"
           height="100%"
-        /> -->
+        />-->
       </div>
       <div class="hero__con--info">
         <!-- We created an app to help Canadian’s find out how COVID-19 will affect
-        their business. Here’s what you need to know: -->
+        their business. Here’s what you need to know:-->
         Welcome to your Small Business Care Bundle put together by the
-        <b-link href="http://www.fostrum.com"><b>Fostrum</b></b-link>
-        Team.
-        <br /><br />CovidImpact immunizes your business during the pandemic with
+        <b-link href="http://www.fostrum.com">
+          <b>Fostrum</b>
+        </b-link>Team.
+        <br />
+        <br />CovidImpact immunizes your business during the pandemic with
         an updated list of financial programs and an assessment tool to simulate
         the impact of Coronavirus on your business!
       </div>
@@ -33,25 +35,17 @@
           <b>Current-Balance</b>, <b>Burn Rate</b> and
           <b>Monthly Revenue</b>(we’ll take over the rest)
         </li>
-      </ul> -->
+      </ul>-->
       <div class="hero__con--row">
         <div class="hero__con-row--col colone">
-          <b-link class="hero__con--link" to="financial-aid">
-            <b-img
-              class="hero_con--icon1"
-              fluid
-              :src="require('../assets/icons/bus.svg')"
-            />
+          <b-link to="financial-aid">
+            <b-img class="hero_con--icon1" fluid :src="require('../assets/icons/bus.svg')" />
             <b-card class="hero__con--btn">Financial Aid</b-card>
           </b-link>
         </div>
         <div class="hero__con-row--col coltwo">
           <b-link to="assessment">
-            <b-img
-              class="hero_con--icon2"
-              fluid
-              :src="require('../assets/icons/analytics.svg')"
-            />
+            <b-img class="hero_con--icon2" fluid :src="require('../assets/icons/analytics.svg')" />
             <b-card class="hero__con--btn">Business Assessment Tool</b-card>
           </b-link>
         </div>
@@ -59,11 +53,7 @@
       <div class="hero__con--row">
         <div class="hero__con-row--col">
           <b-link to="news">
-            <b-img
-              class="hero_con--icon2"
-              fluid
-              :src="require('../assets/icons/news.svg')"
-            />
+            <b-img class="hero_con--icon2" fluid :src="require('../assets/icons/news.svg')" />
             <b-card class="hero__con--btn">COVID-19 News for Business</b-card>
           </b-link>
         </div>
@@ -136,17 +126,6 @@ a {
   text-decoration: none;
   border-bottom: none;
   border: none;
-  text-decoration: underline;
-  text-decoration-color: #f958ff;
-}
-
-.hero__con--btn:hover {
-  background: #f52dfc;
-  text-decoration-color: #f52dfc;
-}
-
-.hero__con--link {
-  text-decoration: none;
 }
 
 .hero__con--row {
