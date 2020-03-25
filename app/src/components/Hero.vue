@@ -8,7 +8,7 @@
         Welcome to your Small Business Care Bundle put together by the
         <b-link href="http://www.fostrum.com">
           <b>Fostrum</b>
-        </b-link>Team.
+        </b-link>gitTeam.
         <br />
         <br />CovidImpact immunizes your business during the pandemic with
         an updated list of financial programs and an assessment tool to simulate
