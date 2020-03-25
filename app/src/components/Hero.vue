@@ -3,22 +3,10 @@
     <div class="hero__con">
       <div class="hero__con--row">
         <h1 class="hero__con--title">
-          <!-- How will COVID-19 affect your business? -->
           COVID-19 Business Care Package
         </h1>
-
-        <!-- <b-img
-          class="heart1"
-          :src="require('../assets/logos/heart.png')"
-          alt="Heart Icon"
-          fluid
-          width="200%"
-          height="100%"
-        /> -->
       </div>
       <div class="hero__con--info">
-        <!-- We created an app to help Canadian’s find out how COVID-19 will affect
-        their business. Here’s what you need to know: -->
         Welcome to your Small Business Care Bundle put together by the
         <b-link href="http://www.fostrum.com"><b>Fostrum</b></b-link>
         Team.
@@ -26,14 +14,7 @@
         an updated list of financial programs and an assessment tool to simulate
         the impact of Coronavirus on your business!
       </div>
-      <!-- <ul class="hero__con--ul">
-        <li>You’ll receive the results in 30 seconds</li>
-        <li>
-          Our algorithm needs you to provide:
-          <b>Current-Balance</b>, <b>Burn Rate</b> and
-          <b>Monthly Revenue</b>(we’ll take over the rest)
-        </li>
-      </ul> -->
+
       <div class="hero__con--row">
         <div class="hero__con-row--col colone">
           <b-link class="hero__con--link" to="financial-aid">
