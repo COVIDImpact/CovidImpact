@@ -4,8 +4,7 @@
       <template v-slot:overlay>
         <div class="text-center">
           <h3 id="cancel-label">
-            Please enter the following and click 'Compute' to simulate your
-            impact assessment...
+            Please enter the following and click 'Compute' to get your impact asessment report...
             <br />
             <br />
 
@@ -17,61 +16,45 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                      >Cash-at-Hand</b
-                    >
+                    >Cash-at-Hand</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproxiamte monthly revenue for your firm."
-                      >Monthly Revenue</b
-                    >
+                    >Monthly Revenue</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                      >Monthly Costs</b
-                    >
+                    >Monthly Costs</b>
                   </li>
-                  <li>
+                  <!-- <li>
                     <b
                       v-b-tooltip.hover.right
                       title="There are three possible scenarios that relate to the duration the pandemic will last. Short means 3 months, Medium is 6 months and Long is 9+ months."
-                      >Scenario</b
-                    >
-                  </li>
+                    >Scenario</b>
+                  </li>-->
                 </ul>
               </h4>
             </div>
           </h3>
           <br />
           <div class="d-flex justify-content-center">
-            <b-form-input
-              v-model="currentBalance"
-              placeholder="Cash"
-            ></b-form-input>
+            <b-form-input v-model="currentBalance" placeholder="Cash"></b-form-input>
             <b-form-input v-model="burnRate" placeholder="Costs"></b-form-input>
-            <b-form-input
-              v-model="monthlyRevenue"
-              placeholder="Revenue"
-            ></b-form-input>
-            <b-dropdown
+            <b-form-input v-model="monthlyRevenue" placeholder="Revenue"></b-form-input>
+            <!-- <b-dropdown
               split
               split-variant="outline-primary"
               variant="primary"
               :text="selectedScenario"
             >
-              <b-dropdown-item @click="selectedScenario = 'Short'" href="#"
-                >Short</b-dropdown-item
-              >
-              <b-dropdown-item @click="selectedScenario = 'Medium'" href="#"
-                >Medium</b-dropdown-item
-              >
-              <b-dropdown-item @click="selectedScenario = 'Long'" href="#"
-                >Long'</b-dropdown-item
-              >
-            </b-dropdown>
+              <b-dropdown-item @click="selectedScenario = 'Short'" href="#">Short</b-dropdown-item>
+              <b-dropdown-item @click="selectedScenario = 'Medium'" href="#">Medium</b-dropdown-item>
+              <b-dropdown-item @click="selectedScenario = 'Long'" href="#">Long'</b-dropdown-item>
+            </b-dropdown>-->
           </div>
           <div class="text-center">
             <br />
@@ -82,8 +65,7 @@
                 show = false;
               "
               variant="primary"
-              >Compute</b-button
-            >
+            >Compute</b-button>
             <br />
           </div>
         </div>
@@ -99,35 +81,20 @@
         </div>
       </div>
 
-      <b-card class="ana-graph-card medium-shadow bcard  styled-con">
+      <b-card class="ana-graph-card medium-shadow bcard styled-con">
         <div class="d-flex justify-content-center">
-          <b-form-input
-            v-model="currentBalance"
-            placeholder="Cash-at-Hand"
-          ></b-form-input>
-          <b-form-input
-            v-model="burnRate"
-            placeholder="Monthly Costs"
-          ></b-form-input>
-          <b-form-input
-            v-model="monthlyRevenue"
-            placeholder="Monthly Revenue"
-          ></b-form-input>
+          <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <b-form-input v-model="monthlyRevenue" placeholder="Monthly Revenue"></b-form-input>
           <b-dropdown
             split
             split-variant="outline-primary"
             variant="primary"
             :text="selectedScenario"
           >
-            <b-dropdown-item @click="selectedScenario = 'Short'" href="#"
-              >Short</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectedScenario = 'Medium'" href="#"
-              >Medium</b-dropdown-item
-            >
-            <b-dropdown-item @click="selectedScenario = 'Long'" href="#"
-              >Long'</b-dropdown-item
-            >
+            <b-dropdown-item @click="selectedScenario = 'Short'" href="#">Short</b-dropdown-item>
+            <b-dropdown-item @click="selectedScenario = 'Medium'" href="#">Medium</b-dropdown-item>
+            <b-dropdown-item @click="selectedScenario = 'Long'" href="#">Long'</b-dropdown-item>
           </b-dropdown>
         </div>
         <div class="text-center">

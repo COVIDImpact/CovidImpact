@@ -11,11 +11,10 @@
 #
 # Happy Coding!
 
-service: covid-fostrum
-
+service: serverless
 # app and org for use with dashboard.serverless.com
-app: fostrum-covid
-org: albertofostrum
+#app: your-app-name
+#org: your-org-name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -24,11 +23,10 @@ org: albertofostrum
 provider:
   name: aws
   runtime: nodejs12.x
-  role: arn:aws:iam::YourAccountNumber:role/YourIamRole
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+  stage: dev
+  region: us-east-1
+  role: arn:aws:iam::487967680631:role/alberto-fostrum
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -61,19 +59,17 @@ provider:
 
 functions:
   app:
-    handler: index.addToMemberList
+    handler: handler.addToMemberList
     events:
       - http: ANY /
       - http: "ANY {proxy+}"
   addToMemberList:
-    handler: index.addToMemberList
+    handler: handler.addToMemberList
     events:
       - http:
           path: addToMemberList
           method: POST
           cors: true
-    environment:
-      MAILCHIMP_API_KEY: 5f535004ac2f49e6fe2ccd12137eeebe-us19
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -125,3 +121,4 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
