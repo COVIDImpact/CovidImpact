@@ -13,7 +13,6 @@
         </div>
       </div>
     </div>
-
     <aid-item></aid-item>
     <Footer></Footer>
   </div>

@@ -5,6 +5,7 @@
     <div class="bcard aid-card">
       <!-- <b-card-group> -->
       <b-card
+        border-variant="light"
         class="aid-con__box-shadow aid-card-animation"
         footer-bg-variant="white"
         title="Wage Subsidy Program"
@@ -29,6 +30,7 @@
       </b-card>
       <br />
       <b-card
+        border-variant="light"
         class="aid-con__box-shadow aid-card-animation"
         footer-bg-variant="white"
         title="Work Share Program"
@@ -50,6 +52,7 @@
       </b-card>
       <br />
       <b-card
+        border-variant="light"
         class="aid-con__box-shadow aid-card-animation"
         footer-bg-variant="white"
         title="Tax Deferements"
@@ -72,6 +75,7 @@
       </b-card>
       <br />
       <b-card
+        border-variant="light"
         class="aid-con__box-shadow aid-card-animation"
         footer-bg-variant="white"
         title="Business Credit Availability Program"
