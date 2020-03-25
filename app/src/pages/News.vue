@@ -13,8 +13,8 @@
     </div>
     <div class="news__con">
       <div class="news__con--content">
-        OTTAWA—Canada announced a fiscal-stimulus and tax-deferral package
-        amounting to nearly 4% of its gross domestic product, marking an
+        <b>OTTAWA—Canada </b>announced a fiscal-stimulus and tax-deferral
+        package amounting to nearly 4% of its gross domestic product, marking an
         aggressive effort to contain economic damage caused by the coronavirus
         pandemic and lower oil prices.
         <span
@@ -25,8 +25,8 @@
         >
       </div>
       <div class="news__con--content">
-        VANCOUVER—Canada announced a fiscal-stimulus and tax-deferral package
-        amounting to nearly 4% of its gross domestic product.
+        <b> VANCOUVER—Canada</b> announced a fiscal-stimulus and tax-deferral
+        package amounting to nearly 4% of its gross domestic product.
         <span
           ><a
             href="https://www.wsj.com/articles/canada-rolls-out-fiscal-boost-and-tax-deferrals-for-coronavirus-relief-11584547026"
@@ -35,7 +35,8 @@
         >
       </div>
       <div class="news__con--content">
-        MONTREAL—Canada announced a fiscal-stimulus and tax-deferral package .
+        <b>MONTREAL—Canada </b>announced a fiscal-stimulus and tax-deferral
+        package .
         <span
           ><a
             href="https://www.wsj.com/articles/canada-rolls-out-fiscal-boost-and-tax-deferrals-for-coronavirus-relief-11584547026"
@@ -44,8 +45,8 @@
         >
       </div>
       <div class="news__con--content">
-        VANCOUVER—Canada announced a fiscal-stimulus and tax-deferral package
-        amounting to nearly 4% of its gross domestic product.
+        <b>VANCOUVER—Canada</b> announced a fiscal-stimulus and tax-deferral
+        package amounting to nearly 4% of its gross domestic product.
         <span
           ><a
             href="https://www.wsj.com/articles/canada-rolls-out-fiscal-boost-and-tax-deferrals-for-coronavirus-relief-11584547026"
@@ -104,6 +105,11 @@ export default {
     width: 768px;
     margin: 0 auto;
     margin-bottom: 2em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .news__con {
+    height: 100vh;
   }
 }
 </style>
