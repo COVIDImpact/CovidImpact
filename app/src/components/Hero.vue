@@ -6,9 +6,7 @@
       </div>
       <div class="hero__con--info">
         Welcome to your Small Business Care Bundle put together by the
-        <b-link href="http://www.fostrum.com">
-          <b>Fostrum</b>
-        </b-link>Team.
+        <b-link href="http://www.fostrum.com"> <b>Fostrum </b> </b-link>Team.
         <br />
         <br />CovidImpact immunizes your business during the pandemic with an
         updated list of financial programs and an assessment tool to simulate
@@ -17,13 +15,21 @@
       <div class="hero__con--row">
         <div class="hero__con-row--col colone">
           <b-link to="financial-aid">
-            <b-img class="hero_con--icon1" fluid :src="require('../assets/icons/bus.svg')" />
+            <b-img
+              class="hero_con--icon1"
+              fluid
+              :src="require('../assets/icons/bus.svg')"
+            />
             <b-card class="hero__con--btn">Financial Aid</b-card>
           </b-link>
         </div>
         <div class="hero__con-row--col coltwo">
           <b-link to="assessment">
-            <b-img class="hero_con--icon2" fluid :src="require('../assets/icons/analytics.svg')" />
+            <b-img
+              class="hero_con--icon2"
+              fluid
+              :src="require('../assets/icons/analytics.svg')"
+            />
             <b-card class="hero__con--btn">Business Assessment Tool</b-card>
           </b-link>
         </div>
@@ -31,8 +37,12 @@
       <div class="hero__con--row">
         <div class="hero__con-row--col">
           <b-link to="news">
-            <b-img class="hero_con--icon2" fluid :src="require('../assets/icons/news.svg')" />
-            <b-card class="hero__con--btn">COVID-19 News for Business</b-card>
+            <b-img
+              class="hero_con--icon2"
+              fluid
+              :src="require('../assets/icons/news.svg')"
+            />
+            <b-card class="hero__con--btn">COVID-19 News for Businesses</b-card>
           </b-link>
         </div>
         <div class="hero__con-row--col"></div>
