@@ -247,7 +247,8 @@ export default {
     },
     updateResults() {
       const runway = this.currentBalance / this.burnRate;
-      this.monthlyRunway = runway;
+      const finalRunway = runway.toFixed(2);
+      this.monthlyRunway = finalRunway;
       if (runway > 6) {
         this.riskLevel = "Low";
       } else if (runway > 3) {

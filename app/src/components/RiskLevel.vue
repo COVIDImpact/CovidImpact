@@ -17,7 +17,7 @@ export default {
     riskLevel: {
       type: String,
       required: true,
-      default: "low"
+      default: "Low"
     }
   }
 };
