@@ -49,12 +49,8 @@
         <b>#CovidImpact</b>
       </div>
       <div class="footer__con__lang">
-        <b-button v-b-modal.modal-1 class="footer__con__lang--button"
-          >Privacy Policy</b-button
-        >
-        <b-button v-b-modal.modal-2 class="footer__con__lang--button "
-          >Disclaimer</b-button
-        >
+        <b-button v-b-modal.modal-1 class="footer__con__lang--button">Privacy Policy</b-button>
+        <b-button v-b-modal.modal-2 class="footer__con__lang--button">Disclaimer</b-button>
       </div>
     </div>
   </div>
@@ -69,6 +65,7 @@ export default {};
   width: 100%;
   background-color: #edf2f7;
   padding-top: 1em;
+  margin-top: 4em;
 }
 .footer__con {
   margin-top: 1em;

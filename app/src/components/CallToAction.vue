@@ -11,7 +11,7 @@
         />
         <div>
           <div v-if="sent">
-            <button class="cta__con__form--button">...</button>
+            <button class="cta__con__form--button">Sending..</button>
           </div>
           <div v-else>
             <button class="cta__con__form--button">Send</button>

@@ -41,20 +41,10 @@
             </div>
           </h3>
           <br />
-          <div class="d-flex justify-content-center">
-            <b-form-input v-model="currentBalance" placeholder="Cash"></b-form-input>
-            <b-form-input v-model="burnRate" placeholder="Costs"></b-form-input>
-            <b-form-input v-model="monthlyRevenue" placeholder="Revenue"></b-form-input>
-            <!-- <b-dropdown
-              split
-              split-variant="outline-primary"
-              variant="primary"
-              :text="selectedScenario"
-            >
-              <b-dropdown-item @click="selectedScenario = 'Short'" href="#">Short</b-dropdown-item>
-              <b-dropdown-item @click="selectedScenario = 'Medium'" href="#">Medium</b-dropdown-item>
-              <b-dropdown-item @click="selectedScenario = 'Long'" href="#">Long'</b-dropdown-item>
-            </b-dropdown>-->
+          <div class="d-flex justify-content-center input-box">
+            <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash"></b-form-input>
+            <b-form-input class="input-box--item" v-model="burnRate" placeholder="Costs"></b-form-input>
+            <b-form-input class="input-box--item" v-model="monthlyRevenue" placeholder="Revenue"></b-form-input>
           </div>
           <div class="text-center">
             <br />
@@ -80,31 +70,26 @@
           </div>
         </div>
       </div>
-
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
-        <div class="d-flex justify-content-center">
-          <b-form-input v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
-          <b-form-input v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
-          <b-form-input v-model="monthlyRevenue" placeholder="Monthly Revenue"></b-form-input>
-          <b-dropdown
-            split
-            split-variant="outline-primary"
-            variant="primary"
-            :text="selectedScenario"
-          >
-            <b-dropdown-item @click="selectedScenario = 'Short'" href="#">Short</b-dropdown-item>
-            <b-dropdown-item @click="selectedScenario = 'Medium'" href="#">Medium</b-dropdown-item>
-            <b-dropdown-item @click="selectedScenario = 'Long'" href="#">Long'</b-dropdown-item>
-          </b-dropdown>
+        <div class="d-flex justify-content-center input-box">
+          <h2 class="text-black float-left">Input Form</h2>
+
+          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="monthlyRevenue"
+            placeholder="Monthly Revenue"
+          ></b-form-input>
         </div>
         <div class="text-center">
           <br />
           <b-button @click="compute()" variant="primary">Compute</b-button>
           <br />
         </div>
-        <div class="text-center">
-          <h3 class="text-black float-left">Cashflow</h3>
+        <h2 class="text-black float-left">Cashflow</h2>
 
+        <div class="text-center">
           <div class="chartDiv">
             <chart :chartData="datacollection" :options="chartoptions"></chart>
           </div>
@@ -124,8 +109,6 @@ const RiskLevel = () => import("@/components/RiskLevel.vue");
 import {
   BContainer,
   BCard,
-  BDropdown,
-  BDropdownItem,
   BFormInput,
   BOverlay
   // BButton
@@ -136,8 +119,6 @@ export default {
     Chart,
     BContainer,
     BCard,
-    BDropdown,
-    BDropdownItem,
     BFormInput,
     BOverlay,
     Runway,
@@ -432,7 +413,7 @@ export default {
   margin-top: 0em;
 }
 .bcard {
-  height: 650px;
+  height: 800px;
   width: 100%;
   position: relative;
 }
@@ -465,6 +446,13 @@ export default {
 .styled-con {
   outline: none;
   border: none;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+.input-box--item {
+  margin-bottom: 0.5em;
 }
 @media screen and (min-width: 768px) {
   .chart-con {

@@ -8,9 +8,9 @@
           <!-- How will COVID-19 affect your business? -->
           Financial Aid
         </h1>
-        <div class="financialaid__con--info text-center">
-          A current list of financial aid from the government.
-        </div>
+        <div
+          class="financialaid__con--info text-center"
+        >A current list of financial aid from our government. Click on a card for more info and to be directed into the official page.</div>
       </div>
     </div>
     <aid-item></aid-item>
@@ -45,7 +45,7 @@ export default {
   margin: 1em 1em;
 }
 .financialaid__con--title {
-  font-size: 2em;
+  font-size: 3em;
   margin-top: 0em;
 }
 

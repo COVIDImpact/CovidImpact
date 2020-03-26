@@ -8,9 +8,9 @@
           <!-- How will COVID-19 affect your business? -->
           Assessment
         </h1>
-        <div class="assessment__con--info text-center">
-          Simulate how your business might fare in 3 different scenarios!
-        </div>
+        <div
+          class="assessment__con--info text-center"
+        >Find out how COVID-19 will affect your cashflow</div>
       </div>
     </div>
 
@@ -45,7 +45,7 @@ export default {
   margin: 1em 1em;
 }
 .assessment__con--title {
-  font-size: 2em;
+  font-size: 3em;
   margin-top: 0em;
 }
 
