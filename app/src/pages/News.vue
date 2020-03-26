@@ -82,6 +82,21 @@
           <small> March 24, 2020</small>
         </div>
 
+        <b>Canada </b> CFIB releases guide to determine if your small business
+        is non-essential or needs to be shut down according to the government.
+        <span
+          ><a
+            href="https://www.cfib-fcei.ca/en/tools-resources/covid-19-business-essential-service"
+            >[Source]</a
+          ></span
+        >
+      </div>
+
+      <div class="news__con--content">
+        <div class="text-muted text-right">
+          <small> March 24, 2020</small>
+        </div>
+
         <b>TORONTO—Canada </b> Ontario Providing Electricity Relief to support
         Small Businesses and Farms During COVID-19
         <span
@@ -208,7 +223,7 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .news__con {
-    height: 120vh;
+    height: 130vh;
   }
 }
 </style>
