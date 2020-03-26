@@ -67,7 +67,7 @@
             <Runway :runway="monthlyRunway"></Runway>
           </div>
           <div class="column1">
-            <RiskLevel></RiskLevel>
+            <RiskLevel :riskLevel="riskLevel"></RiskLevel>
           </div>
         </div>
       </div>
@@ -128,6 +128,7 @@ export default {
   data() {
     return {
       monthlyRunway: 7,
+      riskLevel: "mild",
       datacollection: null,
       currentBalance: "",
       burnRate: "",
@@ -247,6 +248,13 @@ export default {
     updateResults() {
       const runway = this.currentBalance / this.burnRate;
       this.monthlyRunway = runway;
+      if (runway > 6) {
+        this.riskLevel = "Low";
+      } else if (runway > 3) {
+        this.riskLevel = "Mild";
+      } else {
+        this.riskLevel = "High";
+      }
     },
     updateCurrentBalance() {
       var updatedBalance = this.currentBalance;
