@@ -49,6 +49,7 @@
           <div class="text-center">
             <br />
             <b-button
+              class="input-btn"
               ref="cancel"
               @click="
                 compute();
@@ -63,7 +64,7 @@
       <div class="text-center con-graph">
         <div class="row1">
           <div class="column1">
-            <Runway></Runway>
+            <Runway :runway="monthlyRunway"></Runway>
           </div>
           <div class="column1">
             <RiskLevel></RiskLevel>
@@ -84,7 +85,7 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button @click="compute()" variant="primary">Compute</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
           <br />
         </div>
         <h2 class="text-black float-left">Cashflow</h2>
@@ -126,6 +127,7 @@ export default {
   },
   data() {
     return {
+      monthlyRunway: 7,
       datacollection: null,
       currentBalance: "",
       burnRate: "",
@@ -164,6 +166,8 @@ export default {
       isDead: false
     };
   },
+  // props: [`${this.timeLeft}`],
+
   async mounted() {
     var now = moment();
     for (let i = 0; i < 12; i++) {
@@ -177,14 +181,6 @@ export default {
     this.fillOptions();
   },
   methods: {
-    // onShown() {
-    //   // Focus the cancel button when the overlay is showing
-    //   this.$refs.cancel.focus();
-    // },
-    // onHidden() {
-    //   // Focus the show button when the overlay is removed
-    //   this.$refs.show.focus();
-    // },
     formatBalance(value) {
       if (!Number.isInteger(value)) {
         value = value.toFixed(2);
@@ -233,7 +229,7 @@ export default {
             type: "line"
           },
           {
-            label: "Average Monthly Revenues",
+            label: "Monthly Revenues",
             backgroundColor: "#9400D3",
             borderColor: "#191970",
             borderWidth: 3,
@@ -245,10 +241,16 @@ export default {
     },
     compute() {
       this.updateCurrentBalance();
+      this.updateResults();
       this.fillData(this.balanceData, this.revenueData, this.labels);
+    },
+    updateResults() {
+      const runway = this.currentBalance / this.burnRate;
+      this.monthlyRunway = runway;
     },
     updateCurrentBalance() {
       var updatedBalance = this.currentBalance;
+
       if (!(updatedBalance === "")) {
         updatedBalance = parseInt(this.currentBalance);
       } else updatedBalance = 0;
@@ -413,7 +415,7 @@ export default {
   margin-top: 0em;
 }
 .bcard {
-  height: 800px;
+  height: 820px;
   width: 100%;
   position: relative;
 }
@@ -454,12 +456,26 @@ export default {
 .input-box--item {
   margin-bottom: 0.5em;
 }
+.input-btn {
+  background-color: #f958ff;
+  outline: #f958ff;
+  border: #f958ff;
+}
+.input-btn:hover {
+  background-color: #c168c4;
+  outline: #c168c4;
+  border: #c168c4;
+}
 @media screen and (min-width: 768px) {
   .chart-con {
     width: 768px;
     margin: 0 auto;
     margin-bottom: 4em;
   }
+  /* .input-box {
+    display: flex;
+    flex-direction: row;
+  } */
 }
 @media screen and (min-width: 1200px) {
   .ana-graph-card {

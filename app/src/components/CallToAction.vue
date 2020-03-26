@@ -85,6 +85,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
 }
 
 .cta__con__form--input {
@@ -96,6 +97,7 @@ export default {
   width: 100%;
   font-size: 1em;
   line-height: 2em;
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
 }
 .cta__con__form--button {
   margin-top: 0.5em;
@@ -107,6 +109,7 @@ export default {
   padding: 0em 1em;
   background-color: #edf2f7;
   color: rgb(39, 37, 37);
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
 }
 
 .cta__con__form--button:hover {
