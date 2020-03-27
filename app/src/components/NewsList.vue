@@ -12,7 +12,7 @@
     <div class="news__con">
       <div class="news__con--content">
         <b-card-group deck>
-          <div v-for="item in items" :key="item.message">
+          <div v-for="(item, index) in items" :key="index">
             <b-card
               class="bcard"
               :img-src="item.urlToImage"
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     moment: function(date) {
-      return moment(date).format("MMM, DD, YYYY");
+      return moment(date).format(" MMM DD, hh:mm a");
     }
   }
 };
