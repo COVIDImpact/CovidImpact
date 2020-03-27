@@ -8,7 +8,8 @@ import {
   VBModalPlugin,
   ModalPlugin,
   ButtonPlugin,
-  TooltipPlugin
+  TooltipPlugin,
+  CardPlugin
 } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -20,6 +21,7 @@ Vue.use(ModalPlugin);
 Vue.use(ButtonPlugin);
 Vue.use(TooltipPlugin);
 Vue.use(VueAxios, axios);
+Vue.use(CardPlugin);
 Vue.config.productionTip = false;
 
 new Vue({

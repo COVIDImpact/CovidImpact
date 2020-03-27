@@ -2,15 +2,16 @@
   <div>
     <CallToAction></CallToAction>
     <Navbar></Navbar>
-    <!-- <NewsList></NewsList> -->
+
     <div>
       <div v-if="isLoading">Loading</div>
       <div v-else>
         <ul id="example-1">
-          <li v-for="item in newsArray" :key="item.message">{{ item.title }}</li>
+          <NewsList :items="newsArray"></NewsList>
         </ul>
       </div>
     </div>
+
     <Footer></Footer>
   </div>
 </template>
@@ -19,7 +20,7 @@
 const CallToAction = () => import("@/components/CallToAction.vue");
 const Navbar = () => import("@/components/Navbar.vue");
 const Footer = () => import("@/components/Footer.vue");
-// const NewsList = () => import("@/components/NewsList.vue");
+const NewsList = () => import("@/components/NewsList.vue");
 
 const url =
   "https://newsapi.org/v2/top-headlines?country=ca&category=business&q=COVID&from=2020-03-01&sortBy=popularity&apiKey=c1b7824e846c4aeb91684b4b7ef6874c&pageSize=100&page=1&fbclid=IwAR1zJknmRvxP6QkFxlJ23UqMy4eXUv2X36sbEugYQTsxwFsUaY2uKILjxZ8";
@@ -29,8 +30,8 @@ export default {
   components: {
     CallToAction,
     Navbar,
-    Footer
-    // NewsList
+    Footer,
+    NewsList
   },
   data() {
     return {
@@ -62,5 +63,4 @@ export default {
   }
 };
 </script>
-<style scoped>
-</style>
+<style scoped></style>
