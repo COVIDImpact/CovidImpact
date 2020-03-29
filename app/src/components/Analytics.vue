@@ -4,7 +4,8 @@
       <template v-slot:overlay>
         <div class="text-center">
           <h3 id="cancel-label">
-            Please enter the following and click 'Compute' to get your impact asessment report...
+            Please enter the following and click 'Compute' to get your impact
+            asessment report...
             <br />
             <br />
 
@@ -16,19 +17,22 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                    >Cash-at-Hand</b>
+                      >Cash-at-Hand</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproxiamte monthly revenue for your firm."
-                    >Monthly Revenue</b>
+                      >Monthly Revenue</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                    >Monthly Costs</b>
+                      >Monthly Costs</b
+                    >
                   </li>
                   <!-- <li>
                     <b
@@ -42,9 +46,21 @@
           </h3>
           <br />
           <div class="d-flex justify-content-center input-box">
-            <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash"></b-form-input>
-            <b-form-input class="input-box--item" v-model="burnRate" placeholder="Costs"></b-form-input>
-            <b-form-input class="input-box--item" v-model="monthlyRevenue" placeholder="Revenue"></b-form-input>
+            <b-form-input
+              class="input-box--item"
+              v-model="currentBalance"
+              placeholder="Cash"
+            ></b-form-input>
+            <b-form-input
+              class="input-box--item"
+              v-model="burnRate"
+              placeholder="Costs"
+            ></b-form-input>
+            <b-form-input
+              class="input-box--item"
+              v-model="monthlyRevenue"
+              placeholder="Revenue"
+            ></b-form-input>
           </div>
           <div class="text-center">
             <br />
@@ -56,7 +72,8 @@
                 show = false;
               "
               variant="primary"
-            >Compute</b-button>
+              >Compute</b-button
+            >
             <br />
           </div>
         </div>
@@ -75,8 +92,16 @@
         <div class="d-flex justify-content-center input-box">
           <h2 class="text-black float-left">Input Form</h2>
 
-          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
-          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="currentBalance"
+            placeholder="Cash-at-Hand"
+          ></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="burnRate"
+            placeholder="Monthly Costs"
+          ></b-form-input>
           <b-form-input
             class="input-box--item"
             v-model="monthlyRevenue"
@@ -85,7 +110,9 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary"
+            >Compute</b-button
+          >
           <br />
         </div>
         <h2 class="text-black float-left">Cashflow</h2>
@@ -444,6 +471,7 @@ export default {
 .column1 {
   display: flex;
   flex-direction: column;
+  margin-right: 3em;
 }
 .con-graph {
   max-width: 768px;
