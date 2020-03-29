@@ -21,15 +21,6 @@
             This is done by reducing your remittances of income tax withheld on
             your employees’ remuneration.
           </b-card-body>
-
-          <!-- <template v-slot:footer>
-            <b-button
-              href="https://www.canada.ca/en/revenue-agency/campaigns/covid-19-update/frequently-asked-questions-wage-subsidy-small-businesses.html"
-              variant="primary"
-              class="aid-btn"
-              >Learn More</b-button
-            >
-          </template> -->
         </b-card>
       </a>
       <br />
@@ -49,14 +40,23 @@
             allow them to work a temporarily reduced work week while receiving
             EI benefits.
           </b-card-body>
-          <!-- <template v-slot:footer>
-          <b-button
-            href="https://www.canada.ca/en/employment-social-development/services/work-sharing.html"
-            variant="primary"
-            class="aid-btn"
-            >Learn More</b-button
-          >
-        </template> -->
+        </b-card>
+      </a>
+      <br />
+      <a
+        href="https://www.canada.ca/en/department-finance/news/2020/03/introduces-canada-emergency-response-benefit-to-help-workers-and-businesses.html"
+      >
+        <b-card
+          border-variant="light"
+          class="aid-con__box-shadow aid-card-animation"
+          footer-bg-variant="white"
+          title="Canada Emergency Response Benefit Program"
+        >
+          <b-card-body>
+            The government is providing $2,000 a month for up to four months for
+            small business owners and entrepreneurs who are not receiving a
+            paycheck as a result of COVID-19.
+          </b-card-body>
         </b-card>
       </a>
       <br />
