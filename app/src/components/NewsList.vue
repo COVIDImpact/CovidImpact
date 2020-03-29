@@ -10,14 +10,10 @@
     </div>
 
     <div class="news__con">
-      <div class="news__con--content">
-        <b-card-group deck>
+      <div class="text-center">
+        <b-card-group columns>
           <div v-for="(item, index) in items" :key="index">
-            <b-card
-              class="bcard"
-              :img-src="item.urlToImage"
-              :title="item.title"
-            >
+            <b-card :img-src="item.urlToImage" :title="item.title">
               <b-card-text>
                 {{ item.description }}
               </b-card-text>
@@ -110,7 +106,7 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .news__con {
-    height: 130vh;
+    height: 450vh;
   }
 }
 </style>
