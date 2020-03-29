@@ -49,31 +49,49 @@
             <b-form-input
               class="input-box--item"
               v-model="currentBalance"
+              :state="balanceState"
               placeholder="Cash"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="burnRate"
+              :state="burnState"
               placeholder="Costs"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="monthlyRevenue"
+              :state="revenueState"
               placeholder="Revenue"
             ></b-form-input>
           </div>
           <div class="text-center">
             <br />
-            <b-button
-              class="input-btn"
-              ref="cancel"
-              @click="
-                compute();
-                show = false;
-              "
-              variant="primary"
-              >Compute</b-button
-            >
+            <div v-if="balanceState">
+              <b-button
+                class="input-btn"
+                ref="cancel"
+                @click="
+                  compute();
+                  show = false;
+                "
+                variant="primary"
+                >Compute</b-button
+              >
+            </div>
+            <div v-else>
+              <b-button
+                class="input-btn"
+                disabled
+                ref="cancel"
+                @click="
+                  compute();
+                  show = false;
+                "
+                variant="primary"
+                >Compute</b-button
+              >
+            </div>
             <br />
           </div>
         </div>
@@ -151,6 +169,29 @@ export default {
     BOverlay,
     Runway,
     RiskLevel
+  },
+  computed: {
+    balanceState() {
+      if (this.currentBalance.length > 1 && !isNaN(this.currentBalance)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    burnState() {
+      if (this.burnRate.length > 1 && !isNaN(this.burnRate)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    revenueState() {
+      if (this.monthlyRevenue.length > 1 && !isNaN(this.monthlyRevenue)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
   data() {
     return {
