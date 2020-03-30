@@ -6,10 +6,10 @@
     </div>
 
     <div class="news__con">
-      <div class="news__con--content">
-        <b-card-group deck>
+      <div class="text-center">
+        <b-card-group columns>
           <div v-for="(item, index) in items" :key="index">
-            <b-card class="bcard news-item" :img-src="item.urlToImage" :title="item.title">
+            <b-card :img-src="item.urlToImage" :title="item.title">
               <b-card-text>{{ item.description }}</b-card-text>
               <template v-slot:footer>
                 <span class="float-left">
