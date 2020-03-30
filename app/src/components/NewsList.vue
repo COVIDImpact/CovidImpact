@@ -1,34 +1,26 @@
 <template>
   <div>
     <div class="news">
-      <h1 class="news--title text-center">
-        Latest News
-      </h1>
-      <div class="news--info text-center">
-        Relevant events for your business
-      </div>
+      <h1 class="news--title text-center">Latest News</h1>
+      <div class="news--info text-center">Relevant events for your business</div>
     </div>
 
     <div class="news__con">
       <div class="news__con--content">
         <b-card-group deck>
           <div v-for="(item, index) in items" :key="index">
-            <b-card
-              class="bcard"
-              :img-src="item.urlToImage"
-              :title="item.title"
-            >
-              <b-card-text>
-                {{ item.description }}
-              </b-card-text>
+            <b-card class="bcard news-item" :img-src="item.urlToImage" :title="item.title">
+              <b-card-text>{{ item.description }}</b-card-text>
               <template v-slot:footer>
                 <span class="float-left">
                   <a :href="item.url">[Source]</a>
                 </span>
                 <div class="float-right">
-                  <small class="text-muted">{{
+                  <small class="text-muted">
+                    {{
                     moment(item.publishedAt)
-                  }}</small>
+                    }}
+                  </small>
                 </div>
               </template>
             </b-card>
@@ -101,6 +93,11 @@ export default {
   top: 0px;
 }
 
+.news-item {
+  /* width: 100%;
+  margin-bottom: 4em; */
+}
+
 @media screen and (min-width: 768px) {
   .news__con--content {
     width: 768px;
@@ -110,7 +107,6 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .news__con {
-    height: 130vh;
   }
 }
 </style>
