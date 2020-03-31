@@ -285,15 +285,15 @@ export default {
             borderWidth: 3,
             data: balanceData,
             type: "line"
-          },
-          {
-            label: "Monthly Revenues",
-            backgroundColor: "#9400D3",
-            borderColor: "#191970",
-            borderWidth: 3,
-            data: revenueData,
-            type: "line"
           }
+          // {
+          //   label: "Monthly Revenues",
+          //   backgroundColor: "#9400D3",
+          //   borderColor: "#191970",
+          //   borderWidth: 3,
+          //   data: revenueData,
+          //   type: "line"
+          // }
         ]
       };
     },
