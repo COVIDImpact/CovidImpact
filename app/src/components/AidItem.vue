@@ -220,7 +220,6 @@ export default {
   .aid-con {
     width: 768px;
     margin: 0 auto;
-    height: 130vh;
   }
 }
 </style>
