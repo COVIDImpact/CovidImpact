@@ -9,7 +9,7 @@
       >
         <b-card
           border-variant="light"
-          class="aid-con__box-shadow aid-card-animation"
+          class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
           title="Wage Subsidy Program"
         >
@@ -21,15 +21,14 @@
             This is done by reducing your remittances of income tax withheld on
             your employees’ remuneration.
           </b-card-body>
+          <div class="aid-cta">Learn more</div>
         </b-card>
       </a>
       <br />
-      <a
-        href="https://www.canada.ca/en/employment-social-development/services/work-sharing.html"
-      >
+      <a href="https://www.canada.ca/en/employment-social-development/services/work-sharing.html">
         <b-card
           border-variant="light"
-          class="aid-con__box-shadow aid-card-animation"
+          class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
           title="Work Share Program"
         >
@@ -40,6 +39,7 @@
             allow them to work a temporarily reduced work week while receiving
             EI benefits.
           </b-card-body>
+          <div class="aid-cta">Learn more</div>
         </b-card>
       </a>
       <br />
@@ -48,7 +48,7 @@
       >
         <b-card
           border-variant="light"
-          class="aid-con__box-shadow aid-card-animation"
+          class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
           title="Canada Emergency Response Benefit Program"
         >
@@ -57,6 +57,7 @@
             small business owners and entrepreneurs who are not receiving a
             paycheck as a result of COVID-19.
           </b-card-body>
+          <div class="aid-cta">Learn more</div>
         </b-card>
       </a>
       <br />
@@ -65,7 +66,7 @@
       >
         <b-card
           border-variant="light"
-          class="aid-con__box-shadow aid-card-animation"
+          class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
           title="Tax Deferements"
         >
@@ -76,6 +77,8 @@
             accumulate on these amounts during this period. For self-employed,
             the tax deadline is extended from June 15th to July 31st.
           </b-card-body>
+          <div class="aid-cta">Learn more</div>
+
           <!-- <template v-slot:footer>
           <b-button
             href="https://www.canada.ca/en/department-finance/news/2020/03/canadas-covid-19-economic-response-plan-support-for-canadians-and-businesses.html#Extension_of_Deadline"
@@ -83,7 +86,7 @@
             class="aid-btn"
             >Learn More</b-button
           >
-        </template> -->
+          </template>-->
         </b-card>
       </a>
       <br />
@@ -92,7 +95,7 @@
       >
         <b-card
           border-variant="light"
-          class="aid-con__box-shadow aid-card-animation"
+          class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
           title="Business Credit Availability Program"
         >
@@ -104,6 +107,8 @@
             Crown corporations, will work closely with private sector lenders to
             improve access to financing for Canadian businesses.
           </b-card-body>
+          <div class="aid-cta">Learn more</div>
+
           <!-- <template v-slot:footer>
           <b-button
             href="https://www.canada.ca/en/department-finance/programs/financial-sector-policy/business-credit-availability-program.html"
@@ -111,7 +116,7 @@
             class="aid-btn"
             >Learn More</b-button
           >
-        </template> -->
+          </template>-->
         </b-card>
       </a>
       <!-- </b-card-group> -->
@@ -132,6 +137,20 @@ export default {
 </script>
 
 <style scoped>
+.aid-cta {
+  width: 8em;
+  background-color: #f958ff;
+  padding: 0.5em;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
+}
+.aid-cta:hover {
+  box-shadow: 0 7px 14px 0 rgba(50, 50, 93, 0.1),
+    0 3px 6px 0 rgba(0, 0, 0, 0.08), inset 0 0 1px 0 rgba(0, 0, 0, 0.06);
+}
 .bcard {
   width: 50%;
   margin: 0 auto; /* Added */
@@ -158,24 +177,27 @@ export default {
 }
 
 .aid-card-animation {
-  transition: transform 0.2s; /* Animation */
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
 }
 
-.aid-card-animation:hover {
-  transform: scale(
-    1.1
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+/* .aid-card-animation:hover {
+  transform: scale(1.1);
+} */
 
 .hero_con--icon2 {
-  width: 100%;
-  transition: transform 0.2s; /* Animation */
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
 }
 
-.hero_con--icon1:hover {
+/* .hero_con--icon1:hover {
   transform: scale(
     1.1
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) 
+} */
+
+.aid-bcard {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.05, 0.03, 0.35, 1);
 }
 
 .aid-btn {

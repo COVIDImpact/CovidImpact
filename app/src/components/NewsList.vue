@@ -9,7 +9,7 @@
       <div class="text-center">
         <b-card-group columns>
           <div v-for="(item, index) in items" :key="index">
-            <b-card :img-src="item.urlToImage" :title="item.title">
+            <b-card class="news-item" :img-src="item.urlToImage" :title="item.title">
               <b-card-text>{{ item.description }}</b-card-text>
               <template v-slot:footer>
                 <span class="float-left">
@@ -94,8 +94,8 @@ export default {
 }
 
 .news-item {
-  /* width: 100%;
-  margin-bottom: 4em; */
+  /* width: 100%; */
+  margin-bottom: 4em;
 }
 
 @media screen and (min-width: 768px) {
