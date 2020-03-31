@@ -17,22 +17,19 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                      >Cash-at-Hand</b
-                    >
+                    >Cash-at-Hand</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproxiamte monthly revenue for your firm."
-                      >Monthly Revenue</b
-                    >
+                    >Monthly Revenue</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                      >Monthly Costs</b
-                    >
+                    >Monthly Costs</b>
                   </li>
                   <!-- <li>
                     <b
@@ -76,8 +73,7 @@
                   show = false;
                 "
                 variant="primary"
-                >Compute</b-button
-              >
+              >Compute</b-button>
             </div>
             <div v-else>
               <b-button
@@ -89,8 +85,7 @@
                   show = false;
                 "
                 variant="primary"
-                >Compute</b-button
-              >
+              >Compute</b-button>
             </div>
             <br />
           </div>
@@ -109,17 +104,13 @@
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
         <div class="d-flex justify-content-center input-box">
           <h2 class="text-black float-left">Input Form</h2>
+          <label>Cash-at-Hand</label>
 
-          <b-form-input
-            class="input-box--item"
-            v-model="currentBalance"
-            placeholder="Cash-at-Hand"
-          ></b-form-input>
-          <b-form-input
-            class="input-box--item"
-            v-model="burnRate"
-            placeholder="Monthly Costs"
-          ></b-form-input>
+          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <label>Monthly Costs</label>
+
+          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <label>Monthly Revenue</label>
           <b-form-input
             class="input-box--item"
             v-model="monthlyRevenue"
@@ -128,9 +119,7 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary"
-            >Compute</b-button
-          >
+          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
           <br />
         </div>
         <h2 class="text-black float-left">Cashflow</h2>
@@ -492,7 +481,7 @@ export default {
   margin-top: 0em;
 }
 .bcard {
-  height: 820px;
+  height: 870px;
   width: 100%;
   position: relative;
 }
