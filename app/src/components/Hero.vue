@@ -12,30 +12,30 @@
         updated list of financial programs and an assessment tool to simulate
         the impact of Coronavirus on your business!
       </div>
-      <div class="hero__con--row">
-        <div class="hero__con-row--col colone">
-          <b-link to="financial-aid">
-            <b-img
-              class="hero_con--icon1"
-              fluid
-              :src="require('../assets/icons/bus.svg')"
-            />
-            <b-card class="hero__con--btn">Financial Aid</b-card>
-          </b-link>
-        </div>
-        <div class="hero__con-row--col coltwo">
-          <b-link to="assessment">
-            <b-img
-              class="hero_con--icon2"
-              fluid
-              :src="require('../assets/icons/analytics.svg')"
-            />
-            <b-card class="hero__con--btn">Business Assessment Tool</b-card>
-          </b-link>
-        </div>
+      <div class="hero__con--row text-center">
+        <!-- <div class="hero__con-row--col colone"> -->
+        <b-link to="financial-aid">
+          <b-img
+            class="hero_con--icon1"
+            fluid
+            :src="require('../assets/icons/bus.svg')"
+          />
+          <b-card class="hero__con--btn">Financial Aid</b-card>
+        </b-link>
       </div>
-      <div class="hero__con--row">
-        <div class="hero__con-row--col">
+      <!-- </div> -->
+      <div class="hero__con--row text-center">
+        <b-link to="assessment">
+          <b-img
+            class="hero_con--icon2"
+            fluid
+            :src="require('../assets/icons/analytics.svg')"
+          />
+          <b-card class="hero__con--btn">Business Assessment Tool</b-card>
+        </b-link>
+      </div>
+      <div class="hero__con--row text-center">
+        <div class="">
           <b-link to="news">
             <b-img
               class="hero_con--icon2"
@@ -45,7 +45,7 @@
             <b-card class="hero__con--btn">COVID-19 News for Businesses</b-card>
           </b-link>
         </div>
-        <div class="hero__con-row--col"></div>
+        <!-- <div class="hero__con-row--col"></div> -->
       </div>
     </div>
   </div>
@@ -93,11 +93,11 @@ export default {
   fill: #f958ff;
 }
 .hero_con--icon1 {
-  width: 100%;
+  width: 75%;
   transition: transform 0.2s; /* Animation */
 }
 .hero_con--icon2 {
-  width: 100%;
+  width: 75%;
   transition: transform 0.2s; /* Animation */
 }
 
@@ -121,7 +121,7 @@ a {
   display: flex;
   color: white;
   font-weight: bolder;
-  width: 100%;
+  width: 75%;
   margin: auto;
   margin-top: 1em;
   border-radius: 40px;
@@ -146,6 +146,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2em;
 }
 
 .hero__con-row--col {
