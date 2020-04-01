@@ -13,8 +13,13 @@
         >Find out how COVID-19 will affect your cashflow</div>
       </div>
     </div>
-
     <Analytics></Analytics>
+    <div class="cta-assessment">
+      This cashflow forecasting tool was created by Fostrum Financial Technologies. Learn more about us
+      <a
+        href="fostrum.com"
+      >here</a>.
+    </div>
     <Footer></Footer>
   </div>
 </template>
@@ -51,5 +56,18 @@ export default {
 
 .assessment__con--values {
   font-weight: bold;
+}
+.cta-assessment {
+  margin-top: 4em;
+  padding: 0em 1em;
+}
+
+@media screen and (min-width: 768px) {
+  .cta-assessment {
+    margin-top: 4em;
+    width: 768px;
+    margin: 0 auto;
+    padding: 0em 0em;
+  }
 }
 </style>

@@ -122,7 +122,7 @@
           <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
           <br />
         </div>
-        <h2 class="text-black float-left">Cashflow</h2>
+        <h2 class="text-black float-left">Cash Balance</h2>
 
         <div class="text-center">
           <div class="chartDiv">
@@ -481,7 +481,7 @@ export default {
   margin-top: 0em;
 }
 .bcard {
-  height: 870px;
+  height: 900px;
   width: 100%;
   position: relative;
 }
@@ -533,6 +533,7 @@ export default {
   outline: #c168c4;
   border: #c168c4;
 }
+
 @media screen and (min-width: 768px) {
   .chart-con {
     width: 768px;

@@ -6,6 +6,10 @@
       <div v-if="parseInt(runway) === 1">
         <h1 class="font-weight-bold">{{ `${parseInt(runway)} month` }}</h1>
       </div>
+
+      <div v-else-if="parseInt(runway) >= 12">
+        <h1 class="font-weight-bold">{{ `12 months +` }}</h1>
+      </div>
       <div v-else>
         <h1 class="font-weight-bold">{{ `${parseInt(runway)} months` }}</h1>
       </div>
