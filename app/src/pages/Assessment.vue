@@ -8,17 +8,16 @@
           <!-- How will COVID-19 affect your business? -->
           Assessment
         </h1>
-        <div
-          class="assessment__con--info text-center"
-        >Find out how COVID-19 will affect your cashflow</div>
+        <div class="assessment__con--info text-center">
+          Find out how COVID-19 will affect your cashflow
+        </div>
       </div>
     </div>
     <Analytics></Analytics>
     <div class="cta-assessment">
-      This cashflow forecasting tool was created by Fostrum Financial Technologies. Learn more about us
-      <a
-        href="fostrum.com"
-      >here</a>.
+      This cashflow forecasting tool was created by the team at Fostrum
+      Financial Technologies. Learn more about other cool projects we're up to
+      <a href="fostrum.com">here</a>.
     </div>
     <Footer></Footer>
   </div>

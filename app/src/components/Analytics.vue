@@ -388,7 +388,7 @@ export default {
                 display: true
               },
               gridLines: {
-                display: false
+                display: true
               }
             }
           ],
@@ -412,7 +412,7 @@ export default {
                 display: true
               },
               gridLines: {
-                display: false
+                display: true
               }
             }
           ]
