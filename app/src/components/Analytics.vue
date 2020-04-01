@@ -379,11 +379,13 @@ export default {
               stacked: true,
               ticks: {
                 reverse: true,
-                fontSize: 30,
-                userCallback: function(value, index) {
-                  if (index % 2 == 0) {
-                    return ref.moment(value);
-                  } else return "";
+                fontSize: 20,
+                minRotation: 0,
+                maxRotation: 0,
+                userCallback: function(value) {
+                  // if (index % 2 == 0) {
+                  return ref.moment(value);
+                  // } else return "";
                 },
                 display: true
               },
