@@ -17,22 +17,19 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                      >Cash-at-Hand</b
-                    >
+                    >Cash-at-Hand</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproxiamte monthly revenue for your firm."
-                      >Monthly Revenue</b
-                    >
+                    >Monthly Revenue</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                      >Monthly Costs</b
-                    >
+                    >Monthly Costs</b>
                   </li>
                   <!-- <li>
                     <b
@@ -76,8 +73,7 @@
                   show = false;
                 "
                 variant="primary"
-                >Compute</b-button
-              >
+              >Compute</b-button>
             </div>
             <div v-else>
               <b-button
@@ -89,8 +85,7 @@
                   show = false;
                 "
                 variant="primary"
-                >Compute</b-button
-              >
+              >Compute</b-button>
             </div>
             <br />
           </div>
@@ -111,18 +106,10 @@
           <h2 class="text-black float-left">Input Form</h2>
           <label>Cash-at-Hand</label>
 
-          <b-form-input
-            class="input-box--item"
-            v-model="currentBalance"
-            placeholder="Cash-at-Hand"
-          ></b-form-input>
+          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
           <label>Monthly Costs</label>
 
-          <b-form-input
-            class="input-box--item"
-            v-model="burnRate"
-            placeholder="Monthly Costs"
-          ></b-form-input>
+          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
           <label>Monthly Revenue</label>
           <b-form-input
             class="input-box--item"
@@ -132,9 +119,7 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary"
-            >Compute</b-button
-          >
+          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
           <br />
         </div>
         <h2 class="text-black float-left">Cash Balance</h2>
@@ -200,7 +185,7 @@ export default {
   data() {
     return {
       monthlyRunway: 7,
-      riskLevel: "mild",
+      riskLevel: "Mild",
       datacollection: null,
       currentBalance: "",
       burnRate: "",
@@ -302,7 +287,7 @@ export default {
           //   type: "line"
           // }
           {
-            label: "Starting Balance",
+            label: "Balance",
             backgroundColor: "#33F9FF",
             borderColor: "#9400D3",
             borderWidth: 3,
@@ -322,20 +307,33 @@ export default {
     },
     compute() {
       this.updateCurrentBalance();
-      this.updateResults();
+      this.updateMonthlyRunway();
       this.fillData(this.balanceData, this.revenueData, this.labels);
     },
-    updateResults() {
-      const runway = this.currentBalance / this.burnRate;
-      const finalRunway = runway.toFixed(2);
-      this.monthlyRunway = finalRunway;
-      if (runway > 6) {
+    updateRiskLevel() {
+      if (this.monthlyRunway > 6) {
         this.riskLevel = "Low";
-      } else if (runway > 3) {
+      } else if (this.monthlyRunway > 3) {
         this.riskLevel = "Mild";
       } else {
         this.riskLevel = "High";
       }
+    },
+    updateMonthlyRunway() {
+      const newArray = this.balanceData;
+      console.log(newArray.reverse());
+      let arr = [];
+      for (let i = 0; i < 12; i++) {
+        arr.push(newArray[i]);
+        if (newArray[i] <= 0) {
+          console.log(arr.length);
+          this.monthlyRunway = arr.length - 1;
+          this.updateRiskLevel();
+          break;
+        }
+      }
+      console.log(arr);
+      console.log(newArray.reverse());
     },
     updateCurrentBalance() {
       var updatedBalance = this.currentBalance;
