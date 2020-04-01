@@ -17,19 +17,22 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                    >Cash-at-Hand</b>
+                      >Cash-at-Hand</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproxiamte monthly revenue for your firm."
-                    >Monthly Revenue</b>
+                      >Monthly Revenue</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                    >Monthly Costs</b>
+                      >Monthly Costs</b
+                    >
                   </li>
                   <!-- <li>
                     <b
@@ -73,7 +76,8 @@
                   show = false;
                 "
                 variant="primary"
-              >Compute</b-button>
+                >Compute</b-button
+              >
             </div>
             <div v-else>
               <b-button
@@ -85,7 +89,8 @@
                   show = false;
                 "
                 variant="primary"
-              >Compute</b-button>
+                >Compute</b-button
+              >
             </div>
             <br />
           </div>
@@ -106,10 +111,18 @@
           <h2 class="text-black float-left">Input Form</h2>
           <label>Cash-at-Hand</label>
 
-          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="currentBalance"
+            placeholder="Cash-at-Hand"
+          ></b-form-input>
           <label>Monthly Costs</label>
 
-          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="burnRate"
+            placeholder="Monthly Costs"
+          ></b-form-input>
           <label>Monthly Revenue</label>
           <b-form-input
             class="input-box--item"
@@ -119,7 +132,9 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary"
+            >Compute</b-button
+          >
           <br />
         </div>
         <h2 class="text-black float-left">Cash Balance</h2>
@@ -278,6 +293,14 @@ export default {
       this.datacollection = {
         labels: labels,
         datasets: [
+          // {
+          //   label: "Starting Balance",
+          //   backgroundColor: "#9400D3",
+          //   borderColor: "#191970",
+          //   borderWidth: 3,
+          //   data: balanceData,
+          //   type: "line"
+          // }
           {
             label: "Starting Balance",
             backgroundColor: "#33F9FF",
