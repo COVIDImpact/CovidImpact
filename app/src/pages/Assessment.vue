@@ -17,7 +17,7 @@
     <div class="cta-assessment">
       This cashflow forecasting tool was created by the team at Fostrum
       Financial Technologies. Learn more about other cool projects we're up to
-      <a href="fostrum.com">here</a>.
+      <a href="http://www.fostrum.com">here</a>.
     </div>
     <Footer></Footer>
   </div>
