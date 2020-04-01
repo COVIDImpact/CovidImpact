@@ -184,7 +184,7 @@ export default {
   },
   data() {
     return {
-      monthlyRunway: 7,
+      monthlyRunway: 12,
       riskLevel: "Mild",
       datacollection: null,
       currentBalance: "",
