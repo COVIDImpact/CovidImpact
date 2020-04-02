@@ -17,19 +17,22 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                    >Cash-at-Hand</b>
-                  </li>
-                  <li>
-                    <b
-                      v-b-tooltip.hover.right
-                      title="Aproxiamte monthly revenue for your firm."
-                    >Monthly Revenue</b>
+                      >Cash-at-Hand</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                    >Monthly Costs</b>
+                      >Monthly Costs</b
+                    >
+                  </li>
+                  <li>
+                    <b
+                      v-b-tooltip.hover.right
+                      title="Aproxiamte monthly revenue for your firm."
+                      >Monthly Revenue</b
+                    >
                   </li>
                   <!-- <li>
                     <b
@@ -47,19 +50,19 @@
               class="input-box--item"
               v-model="currentBalance"
               :state="balanceState"
-              placeholder="Cash"
+              placeholder="Cash-at-Hand"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="burnRate"
               :state="burnState"
-              placeholder="Costs"
+              placeholder="Monthly Costs"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="monthlyRevenue"
               :state="revenueState"
-              placeholder="Revenue"
+              placeholder="Monthly Revenue"
             ></b-form-input>
           </div>
           <div class="text-center">
@@ -73,7 +76,8 @@
                   show = false;
                 "
                 variant="primary"
-              >Compute</b-button>
+                >Compute</b-button
+              >
             </div>
             <div v-else>
               <b-button
@@ -85,7 +89,8 @@
                   show = false;
                 "
                 variant="primary"
-              >Compute</b-button>
+                >Compute</b-button
+              >
             </div>
             <br />
           </div>
@@ -102,14 +107,29 @@
         </div>
       </div>
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
+        <h2 class="text-black float-left">Cash Balance</h2>
+        <div class="text-center">
+          <div class="chartDiv">
+            <chart :chartData="datacollection" :options="chartoptions"></chart>
+          </div>
+        </div>
+        <br />
         <div class="d-flex justify-content-center input-box">
           <h2 class="text-black float-left">Input Form</h2>
           <label>Cash-at-Hand</label>
 
-          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="currentBalance"
+            placeholder="Cash-at-Hand"
+          ></b-form-input>
           <label>Monthly Costs</label>
 
-          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="burnRate"
+            placeholder="Monthly Costs"
+          ></b-form-input>
           <label>Monthly Revenue</label>
           <b-form-input
             class="input-box--item"
@@ -119,15 +139,10 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary"
+            >Re-compute</b-button
+          >
           <br />
-        </div>
-        <h2 class="text-black float-left">Cash Balance</h2>
-
-        <div class="text-center">
-          <div class="chartDiv">
-            <chart :chartData="datacollection" :options="chartoptions"></chart>
-          </div>
         </div>
       </b-card>
     </b-overlay>
