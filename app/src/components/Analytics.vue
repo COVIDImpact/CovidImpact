@@ -67,7 +67,7 @@
           </div>
           <div class="text-center">
             <br />
-            <div v-if="balanceState">
+            <div v-if="balanceState && burnState && revenueState">
               <b-button
                 class="input-btn"
                 ref="cancel"
@@ -176,21 +176,22 @@ export default {
   },
   computed: {
     balanceState() {
-      if (this.currentBalance.length > 1 && !isNaN(this.currentBalance)) {
+      // if (this.currentBalance.length > 1 && !isNaN(this.currentBalance)) {
+      if (this.currentBalance.length > 0 && !isNaN(this.currentBalance)) {
         return true;
       } else {
         return false;
       }
     },
     burnState() {
-      if (this.burnRate.length > 1 && !isNaN(this.burnRate)) {
+      if (this.burnRate.length > 0 && !isNaN(this.burnRate)) {
         return true;
       } else {
         return false;
       }
     },
     revenueState() {
-      if (this.monthlyRevenue.length > 1 && !isNaN(this.monthlyRevenue)) {
+      if (this.monthlyRevenue.length > 0 && !isNaN(this.monthlyRevenue)) {
         return true;
       } else {
         return false;
@@ -200,7 +201,7 @@ export default {
   data() {
     return {
       monthlyRunway: 12,
-      riskLevel: "Mild",
+      riskLevel: "Low",
       datacollection: null,
       currentBalance: "",
       burnRate: "",
