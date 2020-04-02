@@ -242,11 +242,14 @@ export default {
   // props: [`${this.timeLeft}`],
 
   async mounted() {
-    var now = moment();
+    // var now = moment();
     for (let i = 0; i < 12; i++) {
-      this.labels.push(moment(now).format("MMM, YYYY"));
-      var month = now.add(1, "M").endOf("month");
-      now = month;
+      var date = new Date();
+      date.setMonth(date.getMonth() + i);
+      this.labels.push(date);
+      // this.labels.push(moment(now).format("MMM, YYYY"));
+      // var month = now.add(1, "M").endOf("month");
+      // now = month;
     }
     this.labels = this.labels.reverse();
 
@@ -262,6 +265,9 @@ export default {
     },
     moment: function(date) {
       return moment(date).format("MMM");
+    },
+    momentYear: function(date) {
+      return moment(date).format("MMM, YYYY");
     },
     getYear() {
       var balanceDataYear = this.balanceData;
@@ -487,15 +493,11 @@ export default {
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
               var suffix = ref.getSuffix(value);
               var absValue = Math.abs(value);
+              var date = ref.momentYear(tooltipItem.xLabel);
               if (parseInt(value) >= 1000 || parseInt(value) <= -1000) {
-                return (
-                  tooltipItem.xLabel +
-                  ": " +
-                  suffix +
-                  ref.formatBalance(absValue)
-                );
+                return date + ": " + suffix + ref.formatBalance(absValue);
               } else {
-                return tooltipItem.xLabel + ":   " + suffix + "$" + absValue;
+                return date + ":   " + suffix + "$" + absValue;
               }
             },
             // remove title
