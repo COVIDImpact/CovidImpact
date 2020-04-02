@@ -106,6 +106,17 @@
           </div>
         </div>
       </div>
+      <div>
+        <label for="range-1">Choose a Scenario</label>
+        <b-form-input
+          id="range-1"
+          v-model="scenario"
+          type="range"
+          min="0"
+          max="2"
+        ></b-form-input>
+        <b>{{ scenarios[scenario] }} </b>
+      </div>
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
         <h2 class="text-black float-left">Cash Balance</h2>
         <div class="text-center">
@@ -203,6 +214,11 @@ export default {
       monthlyRunway: 12,
       riskLevel: "Low",
       datacollection: null,
+      scenarios: [
+        "Scenario 1: A 25% Decrease in Revenue",
+        "Scenario 2: A 50% Decrease in Revenue",
+        "Scenario 3: A 100% Decrease in Revenue"
+      ],
       currentBalance: "",
       burnRate: "",
       monthlyRevenue: "",
@@ -230,7 +246,7 @@ export default {
           ]
         }
       },
-      selectedScenario: "Short",
+      scenario: 1,
       showChart: "loading",
       show: true,
       balanceData: [100, 125, 150, 180, 100, 80, 50, 50, 40, 70, 100, 100],
