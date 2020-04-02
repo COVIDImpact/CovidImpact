@@ -337,15 +337,17 @@ export default {
     updateMonthlyRunway() {
       const newArray = this.balanceData;
       console.log(newArray.reverse());
+
       let arr = [];
       for (let i = 0; i < 12; i++) {
         arr.push(newArray[i]);
         if (newArray[i] <= 0) {
           console.log(arr.length);
+
           this.monthlyRunway = arr.length - 1;
           this.updateRiskLevel();
           break;
-        }
+        } else this.monthlyRunway = 12;
       }
       console.log(arr);
       console.log(newArray.reverse());
@@ -445,7 +447,7 @@ export default {
                 var label = dataset.label;
 
                 var sum = 0;
-                if (label === "Starting Balance") {
+                if (label === "Balance") {
                   if (!(ref.currentBalance === "")) {
                     sum = parseFloat(ref.currentBalance);
                   }
