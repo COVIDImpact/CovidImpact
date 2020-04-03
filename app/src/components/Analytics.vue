@@ -61,7 +61,6 @@
               :state="burnState"
               placeholder="Monthly Expenses"
             ></b-form-input>
-
             <b-form-select v-model="selected" :options="options"></b-form-select>
           </div>
           <div class="text-center">
@@ -94,12 +93,12 @@
         </div>
       </template>
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
-        <h2 class="text-black float-left">Cash Balance</h2>
+        <!-- <h2 class="text-black float-left">Cash Balance</h2>
         <div class="text-center">
           <div class="chartDiv">
             <chart :chartData="datacollection" :options="chartoptions"></chart>
           </div>
-        </div>
+        </div>-->
         <br />
         <div class="d-flex justify-content-center input-box">
           <h2 class="text-black float-left">Input Form</h2>
@@ -576,7 +575,7 @@ export default {
   margin-right: 3em;
 }
 .con-graph {
-  max-width: 768px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .chart-con {
