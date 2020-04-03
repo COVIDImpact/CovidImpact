@@ -1,4 +1,4 @@
-<template>
+git commit <template>
   <div class="footer">
     <b-modal id="modal-1" title="Privacy Policy" ok-only>
       <p class="my-4">

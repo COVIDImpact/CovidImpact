@@ -66,7 +66,7 @@
           </div>
           <div class="text-center">
             <br />
-            <div v-if="balanceState">
+            <div v-if="balanceState && burnState && revenueState">
               <b-button
                 class="input-btn"
                 ref="cancel"
@@ -93,8 +93,14 @@
           </div>
         </div>
       </template>
-
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
+        <h2 class="text-black float-left">Cash Balance</h2>
+        <div class="text-center">
+          <div class="chartDiv">
+            <chart :chartData="datacollection" :options="chartoptions"></chart>
+          </div>
+        </div>
+        <br />
         <div class="d-flex justify-content-center input-box">
           <h2 class="text-black float-left">Input Form</h2>
           <label>Current Cash-On-Hand</label>
@@ -114,7 +120,7 @@
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary">Re-compute</b-button>
           <br />
         </div>
         <div class="text-center con-graph">
@@ -168,21 +174,22 @@ export default {
   },
   computed: {
     balanceState() {
-      if (this.currentBalance.length > 1 && !isNaN(this.currentBalance)) {
+      // if (this.currentBalance.length > 1 && !isNaN(this.currentBalance)) {
+      if (this.currentBalance.length > 0 && !isNaN(this.currentBalance)) {
         return true;
       } else {
         return false;
       }
     },
     burnState() {
-      if (this.burnRate.length > 1 && !isNaN(this.burnRate)) {
+      if (this.burnRate.length > 0 && !isNaN(this.burnRate)) {
         return true;
       } else {
         return false;
       }
     },
     revenueState() {
-      if (this.monthlyRevenue.length > 1 && !isNaN(this.monthlyRevenue)) {
+      if (this.monthlyRevenue.length > 0 && !isNaN(this.monthlyRevenue)) {
         return true;
       } else {
         return false;
@@ -199,8 +206,13 @@ export default {
         { value: ".75", text: "75% decrease in revenue per month" }
       ],
       monthlyRunway: 12,
-      riskLevel: "Mild",
+      riskLevel: "Low",
       datacollection: null,
+      scenarios: [
+        "Scenario 1: A 25% Decrease in Revenue",
+        "Scenario 2: A 50% Decrease in Revenue",
+        "Scenario 3: A 100% Decrease in Revenue"
+      ],
       currentBalance: "",
       burnRate: "",
       monthlyRevenue: "",
@@ -228,7 +240,7 @@ export default {
           ]
         }
       },
-      selectedScenario: "Short",
+      scenario: 1,
       showChart: "loading",
       show: true,
       balanceData: [100, 125, 150, 180, 100, 80, 50, 50, 40, 70, 100, 100],
@@ -241,11 +253,14 @@ export default {
   // props: [`${this.timeLeft}`],
 
   async mounted() {
-    var now = moment();
+    // var now = moment();
     for (let i = 0; i < 12; i++) {
-      this.labels.push(moment(now).format("MMM, YYYY"));
-      var month = now.add(1, "M").endOf("month");
-      now = month;
+      var date = new Date();
+      date.setMonth(date.getMonth() + i);
+      this.labels.push(date);
+      // this.labels.push(moment(now).format("MMM, YYYY"));
+      // var month = now.add(1, "M").endOf("month");
+      // now = month;
     }
     this.labels = this.labels.reverse();
 
@@ -261,6 +276,9 @@ export default {
     },
     moment: function(date) {
       return moment(date).format("MMM");
+    },
+    momentYear: function(date) {
+      return moment(date).format("MMM, YYYY");
     },
     getYear() {
       var balanceDataYear = this.balanceData;
@@ -337,11 +355,13 @@ export default {
     updateMonthlyRunway() {
       const newArray = this.balanceData;
       console.log(newArray.reverse());
+
       let arr = [];
       for (let i = 0; i < 12; i++) {
         arr.push(newArray[i]);
         if (newArray[i] <= 0) {
           console.log(arr.length);
+
           this.monthlyRunway = arr.length - 1;
           this.updateRiskLevel();
           break;
@@ -460,7 +480,7 @@ export default {
                 var label = dataset.label;
 
                 var sum = 0;
-                if (label === "Starting Balance") {
+                if (label === "Balance") {
                   if (!(ref.currentBalance === "")) {
                     sum = parseFloat(ref.currentBalance);
                   }
@@ -500,15 +520,11 @@ export default {
                 data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
               var suffix = ref.getSuffix(value);
               var absValue = Math.abs(value);
+              var date = ref.momentYear(tooltipItem.xLabel);
               if (parseInt(value) >= 1000 || parseInt(value) <= -1000) {
-                return (
-                  tooltipItem.xLabel +
-                  ": " +
-                  suffix +
-                  ref.formatBalance(absValue)
-                );
+                return date + ": " + suffix + ref.formatBalance(absValue);
               } else {
-                return tooltipItem.xLabel + ":   " + suffix + "$" + absValue;
+                return date + ":   " + suffix + "$" + absValue;
               }
             },
             // remove title

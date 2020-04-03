@@ -4,10 +4,13 @@
     <Navbar></Navbar>
     <div class="assessment">
       <div class="assessment__con">
-        <h1 class="assessment__con--title text-center">Impact Assessment</h1>
+        <h1 class="assessment__con--title text-center">
+          <!-- How will COVID-19 affect your business? -->
+          Assessment
+        </h1>
         <div
           class="assessment__con--info text-center"
-        >Find out how COVID-19 will affect your cashflow</div>
+        >Find out how COVID-19 may affect your cashflow</div>
       </div>
     </div>
     <Analytics></Analytics>
