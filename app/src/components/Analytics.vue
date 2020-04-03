@@ -17,19 +17,19 @@
                       v-b-tooltip.hover.right
                       title="Current balance or current net profit up until the most recent
             month."
-                    >Cash-at-Hand</b>
+                    >Current Cash-On-Hand</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproxiamte monthly revenue for your firm."
-                    >Monthly Revenue</b>
+                    >Average Monthly Revenue</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
                       title="Aproximate monthly company expenses."
-                    >Monthly Costs</b>
+                    >Average Monthly Expenses</b>
                   </li>
                   <!-- <li>
                     <b
@@ -47,20 +47,22 @@
               class="input-box--item"
               v-model="currentBalance"
               :state="balanceState"
-              placeholder="Cash"
-            ></b-form-input>
-            <b-form-input
-              class="input-box--item"
-              v-model="burnRate"
-              :state="burnState"
-              placeholder="Costs"
+              placeholder="Cash On Hand"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="monthlyRevenue"
               :state="revenueState"
-              placeholder="Revenue"
+              placeholder="Monthly Revenue"
             ></b-form-input>
+            <b-form-input
+              class="input-box--item"
+              v-model="burnRate"
+              :state="burnState"
+              placeholder="Monthly Expenses"
+            ></b-form-input>
+
+            <b-form-select v-model="selected" :options="options"></b-form-select>
           </div>
           <div class="text-center">
             <br />
@@ -91,36 +93,39 @@
           </div>
         </div>
       </template>
-      <div class="text-center con-graph">
-        <div class="row1">
-          <div class="column1">
-            <Runway :runway="monthlyRunway"></Runway>
-          </div>
-          <div class="column1">
-            <RiskLevel :riskLevel="riskLevel"></RiskLevel>
-          </div>
-        </div>
-      </div>
+
       <b-card class="ana-graph-card medium-shadow bcard styled-con">
         <div class="d-flex justify-content-center input-box">
           <h2 class="text-black float-left">Input Form</h2>
-          <label>Cash-at-Hand</label>
+          <label>Current Cash-On-Hand</label>
 
           <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
-          <label>Monthly Costs</label>
 
-          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Costs"></b-form-input>
-          <label>Monthly Revenue</label>
+          <label>Average Monthly Revenue</label>
           <b-form-input
             class="input-box--item"
             v-model="monthlyRevenue"
             placeholder="Monthly Revenue"
           ></b-form-input>
+          <label>Average Monthly Expenses</label>
+          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Expenses"></b-form-input>
+          <label>Monthly Reduction in Revenue</label>
+          <b-form-select v-model="selected" :options="options"></b-form-select>
         </div>
         <div class="text-center">
           <br />
           <b-button class="input-btn" @click="compute()" variant="primary">Compute</b-button>
           <br />
+        </div>
+        <div class="text-center con-graph">
+          <div class="row1 results-row">
+            <div class="column1">
+              <Runway :runway="monthlyRunway"></Runway>
+            </div>
+            <div class="column1">
+              <RiskLevel :riskLevel="riskLevel"></RiskLevel>
+            </div>
+          </div>
         </div>
         <h2 class="text-black float-left">Cash Balance</h2>
 
@@ -145,7 +150,8 @@ import {
   BContainer,
   BCard,
   BFormInput,
-  BOverlay
+  BOverlay,
+  BFormSelect
   // BButton
 } from "bootstrap-vue";
 
@@ -155,9 +161,10 @@ export default {
     BContainer,
     BCard,
     BFormInput,
-    BOverlay,
     Runway,
-    RiskLevel
+    BOverlay,
+    RiskLevel,
+    BFormSelect
   },
   computed: {
     balanceState() {
@@ -184,6 +191,13 @@ export default {
   },
   data() {
     return {
+      selected: "1.0",
+      options: [
+        { value: "1.0", text: "Please select an option" },
+        { value: ".25", text: "25% decrease in revenue per month" },
+        { value: ".5", text: "50% decrease in revenue per month" },
+        { value: ".75", text: "75% decrease in revenue per month" }
+      ],
       monthlyRunway: 12,
       riskLevel: "Mild",
       datacollection: null,
@@ -309,6 +323,7 @@ export default {
       this.updateCurrentBalance();
       this.updateMonthlyRunway();
       this.fillData(this.balanceData, this.revenueData, this.labels);
+      console.log(typeof parseInt(this.selected));
     },
     updateRiskLevel() {
       if (this.monthlyRunway > 6) {
@@ -330,6 +345,8 @@ export default {
           this.monthlyRunway = arr.length - 1;
           this.updateRiskLevel();
           break;
+        } else {
+          this.monthlyRunway = 12;
         }
       }
       console.log(arr);
@@ -341,12 +358,24 @@ export default {
       if (!(updatedBalance === "")) {
         updatedBalance = parseInt(this.currentBalance);
       } else updatedBalance = 0;
-
       var updatedRevenue = this.monthlyRevenue;
       // var originalRevenue;
+      const discountRate = parseFloat(this.selected);
+      console.log(typeof discountRate);
+      console.log(discountRate);
+      const discount = discountRate === 1 ? 1 : 1 - discountRate;
+      console.log(typeof discount);
+      console.log(discount);
+
       if (!(updatedRevenue === "")) {
-        updatedRevenue = parseInt(this.monthlyRevenue);
+        var originalRevenue = parseInt(this.monthlyRevenue);
+        console.log(typeof originalRevenue);
+        console.log(originalRevenue);
+
         // originalRevenue = updatedRevenue;
+        updatedRevenue = originalRevenue * discount;
+        console.log(typeof updatedRevenue);
+        console.log(updatedRevenue);
       } else updatedRevenue = 0;
 
       var updatedBurnRate = this.burnRate;
@@ -360,6 +389,7 @@ export default {
         updatedBalance -= updatedBurnRate;
         updatedBalance += updatedRevenue;
         // originalRevenue += updatedRevenue;
+        console.log(this.revenueData[i]);
       }
       this.balanceData = this.balanceData.reverse();
     },
@@ -504,7 +534,7 @@ export default {
   margin-top: 0em;
 }
 .bcard {
-  height: 900px;
+  height: 1300px;
   width: 100%;
   position: relative;
 }
@@ -519,6 +549,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.results-row {
+  padding-left: 1.5em;
 }
 
 .column1 {
@@ -550,6 +583,7 @@ export default {
   background-color: #f958ff;
   outline: #f958ff;
   border: #f958ff;
+  margin-bottom: 2em;
 }
 .input-btn:hover {
   background-color: #c168c4;

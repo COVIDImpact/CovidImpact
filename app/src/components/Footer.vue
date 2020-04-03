@@ -28,7 +28,8 @@
     </b-modal>
     <b-modal id="modal-2" title="Disclaimer" ok-only>
       <p class="my-4">
-        The content of this website does not constitute medical advice. The
+        The information provided through Fostrum's assessment tool does not constitute legal, tax, financial or accounting advice, and should not be considered a substitute for obtaining competent personalized advice from a licensed professional. You should seek professional advice before making any decision that could affect the financial health of your business.
+        <br />The content of this website does not constitute medical advice. The
         information provided above is meant as a suggestion for concerned
         individuals to follow a loose set of guidelines based on best practices
         and anecdotal evidence to protect themselves and their loved ones. There
