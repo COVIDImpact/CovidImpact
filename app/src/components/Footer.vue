@@ -1,4 +1,5 @@
-git commit <template>
+git commit
+<template>
   <div class="footer">
     <b-modal id="modal-1" title="Privacy Policy" ok-only>
       <p class="my-4">
@@ -28,9 +29,14 @@ git commit <template>
     </b-modal>
     <b-modal id="modal-2" title="Disclaimer" ok-only>
       <p class="my-4">
-        The information provided through Fostrum's assessment tool does not constitute legal, tax, financial or accounting advice, and should not be considered a substitute for obtaining competent personalized advice from a licensed professional. You should seek professional advice before making any decision that could affect the financial health of your business.
-        <br />The content of this website does not constitute medical advice. The
-        information provided above is meant as a suggestion for concerned
+        The information provided through Fostrum's assessment tool does not
+        constitute legal, tax, financial or accounting advice, and should not be
+        considered a substitute for obtaining competent personalized advice from
+        a licensed professional. You should seek professional advice before
+        making any decision that could affect the financial health of your
+        business.
+        <br />The content of this website does not constitute medical advice.
+        The information provided above is meant as a suggestion for concerned
         individuals to follow a loose set of guidelines based on best practices
         and anecdotal evidence to protect themselves and their loved ones. There
         is no guarantee or scientific evidence that following the mentioned
@@ -50,8 +56,15 @@ git commit <template>
         <b>#CovidImpact</b>
       </div>
       <div class="footer__con__lang">
-        <b-button v-b-modal.modal-1 class="footer__con__lang--button">Privacy Policy</b-button>
-        <b-button v-b-modal.modal-2 class="footer__con__lang--button">Disclaimer</b-button>
+        <b-button v-b-modal.modal-1 class="footer__con__lang--button"
+          >Privacy Policy</b-button
+        >
+        <b-button v-b-modal.modal-2 class="footer__con__lang--button"
+          >Disclaimer</b-button
+        >
+        <a class="footer__con__lang--button" href="mailto:info@fostrum.com"
+          >Contact Us!</a
+        >
       </div>
     </div>
   </div>

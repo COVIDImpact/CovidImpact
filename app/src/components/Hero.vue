@@ -9,8 +9,8 @@
         <b-link href="http://www.fostrum.com"> <b>Fostrum </b> </b-link>Team.
         <br />
         <br />CovidImpact immunizes your business during the pandemic with an
-        updated list of financial programs and an assessment tool to simulate
-        the impact of Coronavirus on your business!
+        updated list of financial programs, News and an assessment tool to
+        simulate the impact of Coronavirus on your business!
       </div>
       <div class="hero__con--row text-center">
         <!-- <div class="hero__con-row--col colone"> -->

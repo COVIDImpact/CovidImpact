@@ -25,7 +25,9 @@
         </b-card>
       </a>
       <br />
-      <a href="https://www.canada.ca/en/employment-social-development/services/work-sharing.html">
+      <a
+        href="https://www.canada.ca/en/employment-social-development/services/work-sharing.html"
+      >
         <b-card
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
@@ -68,7 +70,7 @@
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
-          title="Tax Deferements"
+          title="Tax Deferments"
         >
           <b-card-body>
             The CRA will allow all businesses to defer, until after August 31,
