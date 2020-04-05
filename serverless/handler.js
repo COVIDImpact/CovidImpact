@@ -2,7 +2,7 @@
 
 const axios = require("axios");
 
-module.exports.addToMemberList = function(event, context, callback) {
+module.exports.addToMemberList = function (event, context, callback) {
   // const body = JSON.parse(event.body);
 
   // callback(null, {
@@ -13,15 +13,15 @@ module.exports.addToMemberList = function(event, context, callback) {
   const body = JSON.parse(event.body);
   const auth = {
     username: "albertofostrum",
-    password: "5f535004ac2f49e6fe2ccd12137eeebe-us19"
+    password: "dbb66bf919858019548e62b9216588e8-us19",
   };
   const user = {
     email_address: body.emailAddress,
     status: "subscribed",
     merge_fields: {
       FNAME: "",
-      LNAME: ""
-    }
+      LNAME: "",
+    },
   };
   axios
     .post(
@@ -29,30 +29,30 @@ module.exports.addToMemberList = function(event, context, callback) {
       user,
       { auth, headers: { "content-type": "application/json" } }
     )
-    .then(function() {
+    .then(function () {
       const response = {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": "*", // Required for CORS support to work
-          "Access-Control-Allow-Credentials": true // Required for cookies, authorization headers with HTTPS
+          "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
         },
         body: JSON.stringify({
-          message: "Successfully added to member list!"
-        })
+          message: "Successfully added to member list!",
+        }),
       };
       callback(null, response);
     })
-    .catch(e => {
+    .catch((e) => {
       const error = e.response.data;
       const errorResponse = {
         statusCode: error.status,
         headers: {
           "Access-Control-Allow-Origin": "*", // Required for CORS support to work
-          "Access-Control-Allow-Credentials": true // Required for cookies, authorization headers with HTTPS
+          "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
         },
         body: JSON.stringify({
-          message: error.title
-        })
+          message: error.title,
+        }),
       };
       callback(null, errorResponse);
     });
