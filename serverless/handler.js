@@ -3,14 +3,9 @@
 const axios = require("axios");
 
 module.exports.addToMemberList = function (event, context, callback) {
-  // const body = JSON.parse(event.body);
-
-  // callback(null, {
-  //   statusCode: 200,
-  //   body: `Hello from Lambda ${body.emailAddress}`
-  // });
 
   const body = JSON.parse(event.body);
+  // BAD, remove creds from the code
   const auth = {
     username: "albertofostrum",
     password: "dbb66bf919858019548e62b9216588e8-us19",
