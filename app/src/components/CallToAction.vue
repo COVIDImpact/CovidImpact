@@ -1,7 +1,7 @@
-<template>
+<template>{ $t('message.homeAddress') }
   <div class="cta">
     <div class="cta__con">
-      <div class="cta__con--info">Sign-up for the latest updates and small businesss tools!</div>
+      <div class="cta__con--info">{ $t("message.callToAction.signUp")}</div>
       <form class="cta__con__form" @submit="formSubmit">
         <input
           class="cta__con__form--input"
