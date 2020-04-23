@@ -27,12 +27,14 @@ been validated with statements pertaining to the presence or lack of defects.
 Additionally, the code should follow any stylistic and architectural guidelines mimiced the styles
 and patterns in the existing code-base.
 
+## Creating Issues for Features & Enhancements
+See the ISSUE_TEMPLATE file in the root folder.
+
 ## Creating Issues for Bug Fixes
 Short description explaining the high-level reason for the new issue and the following:
 ### Current behavior
 ### Expected behavior
 ### Steps to replicate behavior (include URLs)
-1.
 ### Screenshots
 
 
@@ -40,19 +42,15 @@ Short description explaining the high-level reason for the new issue and the fol
 [Short description explaining the high-level reason for the pull request]
 
 ### Additions
--
+- Description of additions.
 ### Removals
--
+- Description of removals.
 ### Changes
--
+- Description of changes.
 ### Testing
-1.
-### Screenshots
-### Notes
--
-### Todos
--
-### Checklist
+1. Any testing done.
+### Notes & further todos
+- Any additional notes or further todos.
 
 - [ ] PR has an informative and human-readable title
 - [ ] Changes are limited to a single goal (no scope creep)
@@ -64,27 +62,6 @@ Short description explaining the high-level reason for the new issue and the fol
 - [ ] Visually tested in supported browsers and devices (see checklist below :point_down:)
 - [ ] Project documentation has been updated (including the "Unreleased" section of the CHANGELOG)
 - [ ] Reviewers requested with the [Reviewers tool](https://help.github.com/articles/requesting-a-pull-request-review/) :arrow_right:
-
-### Browsers Testing
-
-- [ ] Chrome
-- [ ] Firefox
-- [ ] Safari
-- [ ] Internet Explorer 8, 9, 10, and 11
-- [ ] Edge
-- [ ] iOS Safari
-- [ ] Chrome for Android
-
-### Accessibility
-
-- [ ] Screen reader friendly
-
-### Other
-
-- [ ] Is useable without CSS
-- [ ] Is useable without JS
-- [ ] Flexible from small to large screens
-- [ ] No linting errors or warnings
 
 
 ### Browser & device support
