@@ -1,2 +1,6 @@
 # CovidImpact
-COVID-19 is impacting countless small businesses across Canada, we all face uncertainty.   Several colleagues and I asked what we could do to help?  After a weekend of non-stop coding we’ve put together #CovidImpact, a FREE Small Business Care Package which features: A curated list of programs to help them through the crisis. Real-time news relevant to Canadian ventures Simulation tool to see how their business may be affected across various scenarios depending on how long COVID-19 drags out for.  Together, Canadian businesses will get through this by supporting each other! CovidImpact is built in Vue with Javascript, HTML and CSS files. The project utilizes various Bootstrap-Vue components and newsapi to get the latest business news. The app is hosted on S3 and uses serverless functions for a mailchimp newsletter.
+Welcome to project CovidImpact!!!! 
+
+Read the CONTRIBUTING and ISSUE_TEMPLATE files to get started then browse and take on issues you want to tackle! If you have any questions about the project, great ideas for features or are unsure about anything!
+
+
