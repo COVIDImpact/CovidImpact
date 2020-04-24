@@ -2,15 +2,10 @@
   <div class="hero">
     <div class="hero__con">
       <div class="hero__con--row">
-        <h1 class="hero__con--title">COVID-19 Business Care Package</h1>
+        <h1 class="hero__con--title">{{$t("message.hero_businessCarePackage")}}</h1>
       </div>
       <div class="hero__con--info">
-        Welcome to your Small Business Care Bundle put together by the
-        <b-link href="http://www.fostrum.com"> <b>Fostrum </b> </b-link>Team.
-        <br />
-        <br />CovidImpact immunizes your business during the pandemic with an
-        updated list of financial programs, News and an assessment tool to
-        simulate the impact of Coronavirus on your business!
+        <p v-html="$t('message.hero_welcome')"></p>
       </div>
       <div class="hero__con--row text-center">
         <!-- <div class="hero__con-row--col colone"> -->
@@ -20,7 +15,7 @@
             fluid
             :src="require('../assets/icons/bus.svg')"
           />
-          <b-card class="hero__con--btn">Financial Aid</b-card>
+          <b-card class="hero__con--btn">{{$t("message.hero_financialCard")}}</b-card>
         </b-link>
       </div>
       <!-- </div> -->
@@ -31,7 +26,7 @@
             fluid
             :src="require('../assets/icons/analytics.svg')"
           />
-          <b-card class="hero__con--btn">Business Assessment Tool</b-card>
+          <b-card class="hero__con--btn">{{$t("message.hero_businessAssessmentTool")}}</b-card>
         </b-link>
       </div>
       <div class="hero__con--row text-center">
@@ -42,7 +37,7 @@
               fluid
               :src="require('../assets/icons/news.svg')"
             />
-            <b-card class="hero__con--btn">COVID-19 News for Businesses</b-card>
+            <b-card class="hero__con--btn">{{$t("message.hero_newsForBusinesses")}}</b-card>
           </b-link>
         </div>
         <!-- <div class="hero__con-row--col"></div> -->
