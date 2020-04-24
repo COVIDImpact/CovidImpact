@@ -1,7 +1,7 @@
-<template>{ $t('message.homeAddress') }
+<template>
   <div class="cta">
     <div class="cta__con">
-      <div class="cta__con--info">{ $t("message.callToAction.signUp")}</div>
+      <div class="cta__con--info">{{$t("message.callToAction_signUp")}}</div>
       <form class="cta__con__form" @submit="formSubmit">
         <input
           class="cta__con__form--input"
@@ -11,10 +11,10 @@
         />
         <div>
           <div v-if="sent">
-            <button class="cta__con__form--button">Sending..</button>
+            <button class="cta__con__form--button">{{$t("message.callToAction_sending")}}</button>
           </div>
           <div v-else>
-            <button class="cta__con__form--button">Send</button>
+            <button class="cta__con__form--button">{{$t("message.callToAction_send")}}</button>
           </div>
         </div>
       </form>
@@ -23,11 +23,7 @@
 </template>
 
 <script>
-// const username = "anystring";
-// const password = "5f535004ac2f49e6fe2ccd12137eeebe-us19";
-// const token = Buffer.from(`${username}:${password}`, "utf8").toString("base64");
-const url =
-  "https://5ha6in59k3.execute-api.us-east-1.amazonaws.com/dev/addToMemberList";
+const url = "https://5ha6in59k3.execute-api.us-east-1.amazonaws.com/dev/addToMemberList";
 
 export default {
   data() {
@@ -46,12 +42,12 @@ export default {
           emailAddress: this.email
         })
         .then(response => {
-          console.log(response);
+          //console.log(response);
           currentObj.output = response.data;
           this.sent = false;
         })
         .catch(error => {
-          console.log(error);
+          //console.log(error);
           currentObj.output = error;
           this.sent = false;
         })
@@ -120,10 +116,6 @@ export default {
   .cta__con {
     height: 6em;
     flex-direction: row;
-  }
-  .cta__con--button {
-    width: 200px;
-    margin-top: 0em;
   }
 }
 @media screen and (min-width: 450px) {

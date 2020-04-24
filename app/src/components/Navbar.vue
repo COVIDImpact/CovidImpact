@@ -2,12 +2,12 @@
   <div class="navbar">
     <div class="navbar__con">
       <b-link to="/" class="navbar__con--title">
-        <b>#CovidImpact</b>
+        <b>{{$t("message.covidImpact")}}</b>
       </b-link>
       <div class="navbar__con__lang">
-        <b-link to="/" class="navbar__con__lang--option">English</b-link>
-        <div class="navbar__con__lang--option not-ready">Français</div>
-        <div class="navbar__con__lang--option not-ready">简体中文</div>
+        <b-link to="/" class="navbar__con__lang--option">{{$t("message.language_english")}}</b-link>
+        <div class="navbar__con__lang--option not-ready">{{$t("message.language_french")}}</div>
+        <div class="navbar__con__lang--option not-ready">{{$t("message.language_chinese")}}</div>
       </div>
     </div>
   </div>

@@ -14,29 +14,10 @@ import {
 } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-
-
-// Ready translated locale messages
-const messages = {
-  en: {
-    message: {
-      "message.callToAction.signUp": "Sign-up for the latest updates and small businesss tools!"
-    }
-  },
-  ja: {
-    message: {
-      hello: 'こんにちは、世界'
-    }
-  }
-};
-
-// Create VueI18n instance with options
-const i18n = new VueI18n({
-  locale: 'ja', // set locale
-  messages, // set locale messages
-});
+import messages from "./i18n/messages";
 
 // Vue.use(InstantSearch);
+Vue.use(VueI18n);
 Vue.use(DropdownPlugin);
 Vue.use(VBModalPlugin);
 Vue.use(ModalPlugin);
@@ -45,6 +26,13 @@ Vue.use(TooltipPlugin);
 Vue.use(VueAxios, axios);
 Vue.use(CardPlugin);
 Vue.config.productionTip = false;
+
+const browserLocale = navigator.language.split('-')[0];
+// Create VueI18n instance with options
+const i18n = new VueI18n({
+  locale: browserLocale, // set locale
+  messages, // set locale messages
+});
 
 new Vue({
   i18n,
