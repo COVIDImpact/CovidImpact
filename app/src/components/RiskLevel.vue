@@ -2,7 +2,7 @@
   <div>
     <br />
     <div class="text-center">
-      <h3 class="text-secondary font-weight-bold">Risk Level</h3>
+      <h3 class="text-secondary font-weight-bold">{{$t("message.riskLevel")}}</h3>
       <h1 class="text-danger font-weight-bold">{{riskLevel}}</h1>
       <br />
     </div>

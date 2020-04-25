@@ -1,27 +1,29 @@
 <template>
   <div class="form">
     <div class="form__con">
-      <h1 class="form__con--title">Preparation</h1>
+      <h1 class="form__con--title">{{$("message.prepare_header")}}</h1>
       <div class="form__con--info">
-        Here's what you need to run your impact assessment:
+        {{$("message.prepare_form")}}
         <br />
         <br />
         <ul>
           <li>
             <b
               v-b-tooltip.hover.right
-              title="Current balance or current net profit up until the most recent
-            month."
-            >Cash-at-Hand</b>
+              :title="$t('message.prepare_list1Hover')"
+            >{{$("message.prepare_list1")}}</b>
           </li>
           <li>
             <b
               v-b-tooltip.hover.right
-              title="Aproxiamte monthly revenue for your firm."
-            >Monthly Revenue</b>
+              :title="$t('message.prepare_list2Hover')"
+            >{{$("message.prepare_list2")}}</b>
           </li>
           <li>
-            <b v-b-tooltip.hover.right title="Aproximate monthly company expenses.">Monthly Costs</b>
+            <b
+              v-b-tooltip.hover.right
+              :title="$t('message.prepare_list3Hover')"
+            >{{$("message.prepare_list3")}}</b>
           </li>
         </ul>
       </div>
