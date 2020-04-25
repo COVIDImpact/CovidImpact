@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="news">
-      <h1 class="news--title text-center">Latest News</h1>
-      <div class="news--info text-center">Relevant events for your business</div>
+      <h1 class="news--title text-center">{{$("message.newsList_latestNews")}}</h1>
+      <div class="news--info text-center">{{$("message.newsList_relevantEvents")}}</div>
     </div>
 
     <div class="news__con">

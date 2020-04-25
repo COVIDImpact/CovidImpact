@@ -2,10 +2,10 @@
 <template>
   <div class="time">
     <div class="time__con">
-      <h1 class="time__con--title">Timeline of Events: Canadian Businesses</h1>
+      <h1 class="time__con--title">{{$t("message.timeline_header")}}</h1>
       <div
         class="time__con--info"
-      >Here’s a timeline of events every business owner in Canada should be aware of:</div>
+      >{{$t("message.timeline_content")}}</div>
     </div>
   </div>
 </template>

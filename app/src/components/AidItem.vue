@@ -3,7 +3,6 @@
     <br />
 
     <div class="bcard aid-card">
-      <!-- <b-card-group> -->
       <a
         href="https://www.canada.ca/en/revenue-agency/campaigns/covid-19-update/frequently-asked-questions-wage-subsidy-small-businesses.html"
       >
@@ -11,17 +10,12 @@
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
-          title="Wage Subsidy Program"
+          :title='$t("message.aidItem_card1Title")'
         >
           <b-card-body>
-            The government is proposing to provide eligible small employers a
-            temporary wage subsidy for a period of three months. The subsidy
-            will be equal to 10% of remuneration paid during that period, up to
-            a maximum subsidy of $1,375 per employee and $25,000 per employer.
-            This is done by reducing your remittances of income tax withheld on
-            your employees’ remuneration.
+            {{$t("message.aidItem_card1")}}
           </b-card-body>
-          <div class="aid-cta">Learn more</div>
+          <div class="aid-cta">{{$t("message.learnMore")}}</div>
         </b-card>
       </a>
       <br />
@@ -32,16 +26,12 @@
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
-          title="Work Share Program"
+          :title='$t("message.aidItem_card2Title")'
         >
           <b-card-body>
-            If your employees are eligible for Employment Insurance (EI)
-            benefits, and your business is suffering a downturn due to COVID-19,
-            you can apply for a work-sharing agreement. The agreement would
-            allow them to work a temporarily reduced work week while receiving
-            EI benefits.
+            {{$t("message.aidItem_card2")}}
           </b-card-body>
-          <div class="aid-cta">Learn more</div>
+          <div class="aid-cta">{{$t("message.learnMore")}}</div>
         </b-card>
       </a>
       <br />
@@ -52,14 +42,12 @@
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
-          title="Canada Emergency Response Benefit Program"
+          :title='$t("message.aidItem_card3Title")'
         >
           <b-card-body>
-            The government is providing $2,000 a month for up to four months for
-            small business owners and entrepreneurs who are not receiving a
-            paycheck as a result of COVID-19.
+            {{$t("message.aidItem_card3")}}
           </b-card-body>
-          <div class="aid-cta">Learn more</div>
+          <div class="aid-cta">{{$t("message.learnMore")}}</div>
         </b-card>
       </a>
       <br />
@@ -70,16 +58,12 @@
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
-          title="Tax Deferments"
+          :title='$t("message.aidItem_card4Title")'
         >
           <b-card-body>
-            The CRA will allow all businesses to defer, until after August 31,
-            2020, the payment of any income tax amounts that become owing on or
-            after today and before September 2020. No interest or penalties will
-            accumulate on these amounts during this period. For self-employed,
-            the tax deadline is extended from June 15th to July 31st.
+            {{$t("message.aidItem_card4")}}
           </b-card-body>
-          <div class="aid-cta">Learn more</div>
+          <div class="aid-cta">{{$t("message.learnMore")}}</div>
 
           <!-- <template v-slot:footer>
           <b-button
@@ -99,17 +83,12 @@
           border-variant="light"
           class="aid-bcard aid-con__box-shadow aid-card-animation"
           footer-bg-variant="white"
-          title="Business Credit Availability Program"
+          :title='$t("message.aidItem_card5Title")'
         >
           <b-card-body>
-            Through this program, Export Development Canada (EDC) and the
-            Business Development Bank of Canada (BDC) will provide more than $10
-            billion in direct lending and other types of financial support at
-            market rates to viable small businesses. BDC and EDC, both financial
-            Crown corporations, will work closely with private sector lenders to
-            improve access to financing for Canadian businesses.
+            {{$t("message.aidItem_card5")}}
           </b-card-body>
-          <div class="aid-cta">Learn more</div>
+          <div class="aid-cta">{{$t("message.learnMore")}}</div>
 
           <!-- <template v-slot:footer>
           <b-button
@@ -121,7 +100,6 @@
           </template>-->
         </b-card>
       </a>
-      <!-- </b-card-group> -->
     </div>
 
     <br />

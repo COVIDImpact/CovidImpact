@@ -4,8 +4,7 @@
       <template v-slot:overlay>
         <div class="text-center">
           <h3 id="cancel-label">
-            Please enter the following and click 'Compute' to get your impact
-            asessment report...
+            {{$t("message.analytics_header")}}
             <br />
             <br />
 
@@ -15,21 +14,20 @@
                   <li>
                     <b
                       v-b-tooltip.hover.right
-                      title="Current balance or current net profit up until the most recent
-            month."
-                    >Current Cash-On-Hand</b>
+                      :title='$t("message.analytics_list1Hover")'
+                    >{{$t("message.analytics_list1")}}</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
-                      title="Aproxiamte monthly revenue for your firm."
-                    >Average Monthly Revenue</b>
+                      :title='$t("message.analytics_list2Hover")'
+                    >{{$t("message.analytics_list2")}}</b>
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
-                      title="Aproximate monthly company expenses."
-                    >Average Monthly Expenses</b>
+                      :title='$t("message.analytics_list3Hover")'
+                    >{{$t("message.analytics_list3")}}</b>
                   </li>
                   <!-- <li>
                     <b
@@ -47,19 +45,19 @@
               class="input-box--item"
               v-model="currentBalance"
               :state="balanceState"
-              placeholder="Cash On Hand"
+              :placeholder='$t("message.analytics_input1")'
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="monthlyRevenue"
               :state="revenueState"
-              placeholder="Monthly Revenue"
+              :placeholder='$t("message.analytics_input2")'
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="burnRate"
               :state="burnState"
-              placeholder="Monthly Expenses"
+              :placeholder='$t("message.analytics_input3")'
             ></b-form-input>
             <b-form-select v-model="selected" :options="options"></b-form-select>
           </div>
@@ -74,7 +72,7 @@
                   show = false;
                 "
                 variant="primary"
-              >Compute</b-button>
+              >{{$t("message.analytics_compute")}}</b-button>
             </div>
             <div v-else>
               <b-button
@@ -86,7 +84,7 @@
                   show = false;
                 "
                 variant="primary"
-              >Compute</b-button>
+              >{{$t("message.analytics_compute")}}</b-button>
             </div>
             <br />
           </div>
@@ -101,25 +99,25 @@
         </div>-->
         <br />
         <div class="d-flex justify-content-center input-box">
-          <h2 class="text-black float-left">Input Form</h2>
-          <label>Current Cash-On-Hand</label>
+          <h2 class="text-black float-left">{{$t("message.analytics_inputForm")}}</h2>
+          <label>{{$t("message.analytics_currentCashOnHand")}}</label>
 
-          <b-form-input class="input-box--item" v-model="currentBalance" placeholder="Cash-at-Hand"></b-form-input>
+          <b-form-input class="input-box--item" v-model="currentBalance" :placeholder='$("message.analytics_cashAtHand")'></b-form-input>
 
-          <label>Average Monthly Revenue</label>
+          <label>{{$t("message.analytics_averageMonthlyRevenue")}}</label>
           <b-form-input
             class="input-box--item"
             v-model="monthlyRevenue"
-            placeholder="Monthly Revenue"
+            :placeholder='$("message.analytics_monthlyRevenue")'
           ></b-form-input>
-          <label>Average Monthly Expenses</label>
-          <b-form-input class="input-box--item" v-model="burnRate" placeholder="Monthly Expenses"></b-form-input>
-          <label>Monthly Reduction in Revenue</label>
+          <label>{{$t("message.analytics_averageMonthlyExpenses")}}</label>
+          <b-form-input class="input-box--item" v-model="burnRate" :placeholder='$("message.analytics_monthlyExpenses")'></b-form-input>
+          <label>{{$t("message.analytics_monthlyReductionInRevenue")}}</label>
           <b-form-select v-model="selected" :options="options"></b-form-select>
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary">Re-compute</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary">{{$t("message.analytics_recompute")}}</b-button>
           <br />
         </div>
         <div class="text-center con-graph">
@@ -132,7 +130,7 @@
             </div>
           </div>
         </div>
-        <h2 class="text-black float-left">Cash Balance</h2>
+        <h2 class="text-black float-left">{{$t("message.analytics_cashBalance")}}</h2>
 
         <div class="text-center">
           <div class="chartDiv">
