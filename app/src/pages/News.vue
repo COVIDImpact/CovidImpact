@@ -4,10 +4,10 @@
     <Navbar></Navbar>
 
     <div>
-      <div v-if="isLoading">Loading</div>
+      <div v-if="isLoading">{{$t("message.loading")}}</div>
       <div v-else>
         <ul id="example-1">
-          <NewsList :items="newsArray"></NewsList>
+          <NewsList :items="news" :score="score"></NewsList>
         </ul>
       </div>
     </div>
@@ -21,10 +21,12 @@ const CallToAction = () => import("@/components/CallToAction.vue");
 const Navbar = () => import("@/components/Navbar.vue");
 const Footer = () => import("@/components/Footer.vue");
 const NewsList = () => import("@/components/NewsList.vue");
+import { median } from "mathjs";
 
-const url =
+const newsApiUrl =
   'https://newsapi.org/v2/everything?apiKey=c1b7824e846c4aeb91684b4b7ef6874c&pageSize=29&page=1&fbclid=IwAR1zJknmRvxP6QkFxlJ23UqMy4eXUv2X36sbEugYQTsxwFsUaY2uKILjxZ8&sortBy=publishedAt&q="canadian businesses"AND Covid';
-// "https://newsapi.org/v2/top-headlines?country=ca&category=business&q=COVID&from=2020-03-01&sortBy=popularity&apiKey=c1b7824e846c4aeb91684b4b7ef6874c&pageSize=100&page=1&fbclid=IwAR1zJknmRvxP6QkFxlJ23UqMy4eXUv2X36sbEugYQTsxwFsUaY2uKILjxZ8";
+const sentimentApiUrl =
+  'https://twinword-sentiment-analysis.p.rapidapi.com/analyze/';
 
 export default {
   name: "financialaid",
@@ -37,29 +39,49 @@ export default {
   data() {
     return {
       isLoading: true,
-      newsArray: []
+      news: [],
+      sentimentScores: {},
+      score: "🇨🇦",
     };
   },
   async mounted() {
-    this.getNewsItems();
+    await this.getNewsItems();
+    console.log(this.news);
+    const promises = this.news.map((item, index) => this.getSentiment(index, item.description));
+    await Promise.all(promises);
+    const scores = Object.entries(this.sentimentScores).map(entry => entry[1]);
+    console.log(scores);
+    this.score = this.mapScoreToEmoji(scores);
   },
   methods: {
-    getNewsItems() {
-      this.axios
-        .get(url)
-        .then(response => {
-          console.log(response.data.articles);
-          this.newsArray = response.data.articles;
-          console.log(this.newsArray);
-          this.isLoading = !true;
-          console.log(this.isLoading);
-        })
-        .catch(error => {
-          console.log(error);
-        })
-        .finally(e => {
-          console.log(e);
-        });
+    async getNewsItems() {
+      try {
+        const response = await this.axios.get(newsApiUrl);
+        this.news = response.data.articles;
+        this.isLoading = false;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async getSentiment(index, description) {
+      const headers = {
+        "x-rapidapi-host": "twinword-sentiment-analysis.p.rapidapi.com",
+        "x-rapidapi-key": "b75a76b087msh356e8673d46d70bp1b6196jsndb89ae387702",
+        "content-type": "application/x-www-form-urlencoded"
+      };
+      const data = "text=" + description;
+      const response  = await this.axios.post(sentimentApiUrl, data, {headers});
+      this.sentimentScores[index] = response.data.score;
+    },
+    mapScoreToEmoji(scores) {
+      const med = median(scores);
+      if (med > 0.5) {
+        return "😃";
+      } else if (med < 0.5) {
+        return "🙁";
+      } else {
+        return "🇨🇦";
+      }
     }
   }
 };
