@@ -54,7 +54,7 @@ const messages = {
       newsList_relevantEvents: "Relevant events for your business",
       newsList_outlook: "News Outlook: ",
       newsList_source: "Source link",
-      newsList_outlookDescription: "😃 the outlook is hopeful\n🙁 the outlook is not good",
+      newsList_outlookDescription: "😃 the outlook is hopeful\n😐the outlook is neutral\n🙁 the outlook is not good",
       prepare_header: "Prepare",
       prepare_form: "Here's what you need to run your impact assessment:",
       prepare_list1Hover: "Current balance or current net profit up until the most recent month.",
