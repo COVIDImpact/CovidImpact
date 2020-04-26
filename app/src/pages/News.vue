@@ -75,12 +75,12 @@ export default {
     },
     mapScoreToEmoji(scores) {
       const med = median(scores);
-      if (med > 0.5) {
+      if (med > 0.05) {
         return "😃";
-      } else if (med < 0.5) {
+      } else if (med < -0.05) {
         return "🙁";
       } else {
-        return "🇨🇦";
+        return "😐";
       }
     }
   }
