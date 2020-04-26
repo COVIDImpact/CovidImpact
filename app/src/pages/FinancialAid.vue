@@ -6,11 +6,11 @@
       <div class="financialaid__con">
         <h1 class="financialaid__con--title text-center">
           <!-- How will COVID-19 affect your business? -->
-          Financial Aid
+          {{$t("message.financialAid_header")}}
         </h1>
         <div
           class="financialaid__con--info text-center"
-        >A current list of financial aid from our government. Click on a card for more info and to be directed into the official page.</div>
+        >{{$t("message.financialAid_content")}}</div>
       </div>
     </div>
     <aid-item></aid-item>

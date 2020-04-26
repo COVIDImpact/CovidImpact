@@ -6,22 +6,16 @@
       <div class="assessment__con">
         <h1 class="assessment__con--title text-center">
           <!-- How will COVID-19 affect your business? -->
-          Assessment
+          {{$t("message.assessment_header")}}
         </h1>
         <div
           class="assessment__con--info text-center"
-        >Find out how COVID-19 may affect your cashflow</div>
+        >{{$t("message.assessment_findOut")}}</div>
       </div>
     </div>
     <Analytics></Analytics>
     <div class="cta-assessment">
-      This cashflow forecasting tool was created by the team at Fostrum
-      Financial Technologies. Learn more about other cool projects we're up to
-      <a
-        href="http://www.fostrum.com"
-      >
-        <b>here</b>
-      </a>.
+      <p v-html="$t('message.assessment_analytics')"></p>
     </div>
     <Footer></Footer>
   </div>

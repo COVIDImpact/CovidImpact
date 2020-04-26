@@ -1,9 +1,13 @@
 <template>
   <div>
     <div class="news">
-      <h1 class="news--title text-center">{{$("message.newsList_latestNews")}}</h1>
-      <div class="news--info text-center">{{$("message.newsList_relevantEvents")}}</div>
+      <h1 class="news--title text-center">{{$t("message.newsList_latestNews")}}</h1>
+      <div class="news--info text-center">{{$t("message.newsList_relevantEvents")}}</div>
+      <div class="news--info text-center">{{$t("message.newsList_outlook")}} <div id="score">{{ score }}</div>
+      </div>
     </div>
+
+    <b-tooltip target="score" :title="$t('message.newsList_outlookDescription')"></b-tooltip>
 
     <div class="news__con">
       <div class="text-center">
@@ -11,9 +15,9 @@
           <div v-for="(item, index) in items" :key="index">
             <b-card class="news-item" :img-src="item.urlToImage" :title="item.title">
               <b-card-text>{{ item.description }}</b-card-text>
-              <template v-slot:footer>
+              <template v-slot:footer style="padding: 1.5rem 1.25rem">
                 <span class="float-left">
-                  <a :href="item.url">[Source]</a>
+                  <a :href="item.url"><i>{{$t("message.newsList_source")}}</i></a>
                 </span>
                 <div class="float-right">
                   <small class="text-muted">
@@ -37,7 +41,7 @@ import moment from "moment";
 
 export default {
   name: "financialaid",
-  props: ["items"],
+  props: ["items", "score"],
   components: {
     BCard
   },
@@ -52,45 +56,24 @@ export default {
 };
 </script>
 <style scoped>
+
 .news {
   width: 100%;
 }
 .news--title {
   font-size: 3em;
 }
+
 .news__con {
   padding: 1em 1em;
 }
 .news--info {
   margin-bottom: 2em;
 }
-.news__con--title {
-  font-size: 2em;
-  margin-top: 0em;
-}
-.news__con--content {
-  width: 100%;
-  margin-bottom: 1em;
-}
+
 .news__con--content a {
   color: #f958ff;
   font-size: 0.85em;
-}
-.bcard {
-  width: 50%;
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
-}
-
-.news__con--values {
-  font-weight: bold;
-}
-
-.news__con--time-stamp {
-  position: relative;
-  right: 0px;
-  top: 0px;
 }
 
 .news-item {

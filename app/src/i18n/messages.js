@@ -1,6 +1,7 @@
 const messages = {
   en: {
     message: {
+      loading: "Loading",
       learnMore: "Learn More",
       language_english: "English",
       language_french: "Français",
@@ -51,6 +52,9 @@ const messages = {
       footer2: "The information provided through Fostrum's assessment tool does not constitute legal, tax, financial, or accounting advice, and should not be considered a substitute for obtaining competent personalized advice from a licensed professional. You should seek professional advice before making any decision that could affect the financial health of your business. <br />The content of this website does not constitute medical advice. The information provided above is meant as a suggestion for concerned individuals to follow a loose set of guidelines based on best practices and anecdotal evidence to protect themselves and their loved ones. There is no guarantee or scientific evidence that following the mentioned guidelines will lead to a reduction in new infections or even stop the COVID-19 epidemic. There is also no guarantee that following these guidelines will reduce the risk of getting infected with SARS-CoV-2 or any other viral or bacterial contagion. All information provided on this website is given with the best intent and will to provide factual information. In no event shall the website operators be held liable for any claim, damages, or other liabilities. If you have concerns or comments about the information provided on this website, please write to your regional or federal government.",
       newsList_latestNews: "Latest News",
       newsList_relevantEvents: "Relevant events for your business",
+      newsList_outlook: "News Outlook: ",
+      newsList_source: "Source link",
+      newsList_outlookDescription: "😃 the outlook is hopeful\n🙁 the outlook is not good",
       prepare_header: "Prepare",
       prepare_form: "Here's what you need to run your impact assessment:",
       prepare_list1Hover: "Current balance or current net profit up until the most recent month.",
@@ -65,7 +69,12 @@ const messages = {
       runway_12months: "12 months +",
       runway_months: "months",
       timeline_header: "Timeline of Events: Canadian Businesses",
-      timeline_content: "Here’s a timeline of events every business owner in Canada should be aware of:"
+      timeline_content: "Here’s a timeline of events every business owner in Canada should be aware of:",
+      assessment_header: "Assessment",
+      assessment_findOut: "Find out how COVID-19 may affect your cashflow",
+      assessment_analytics: "This cashflow forecasting tool was created by the team at Fostrum Financial Technologies. Learn more about other cool projects we're up to <a href='http://www.fostrum.com'><b>here</b></a>.",
+      financialAid_header: "Financial Aid",
+      financialAid_content: "A current list of financial aid from our government. Click on a card for more info and to be directed into the official page.",
     }
   },
   ru: {
