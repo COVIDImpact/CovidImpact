@@ -14,7 +14,7 @@ const messages = {
       callToAction_sending: "Sending..",
       callToAction_send: "Send",
       hero_businessCarePackage: "COVID-19 Business Care Package",
-      hero_welcome: "Welcome to your Small Business Care Bundle put together by the <b-link href=\"http://www.fostrum.com\"> <b>Fostrum </b> </b-link>Team. <br /> <br />CovidImpact immunizes your business during the pandemic with an updated list of financial programs, News and an assessment tool to simulate the impact of Coronavirus on your business!",
+      hero_welcome: "Welcome to your Small Business Care Bundle brought to you by the <b-link href=\"http://www.fostrum.com\"> <b>Fostrum </b> </b-link>Team. <br /> <br />CovidImpact is a FOSS (free and open-source) website that aims to keep small business owners informed during the pandemic by providing an up-to-date list of financial programs, news, and an assessment tool to simulate the impact of Coronavirus on your business.",
       hero_financialCard: "Financial Card",
       hero_businessAssessmentTool: "Business Assessment Tool",
       hero_newsForBusinesses: "COVID-19 News for Businesses",
