@@ -15,18 +15,12 @@
           <div v-for="(item, index) in items" :key="index">
             <b-card class="news-item" :img-src="item.urlToImage" :title="item.title">
               <b-card-text>{{ item.description }}</b-card-text>
-              <template v-slot:footer style="padding: 1.5rem 1.25rem">
-                <span class="float-left">
-                  <a :href="item.url"><i>{{$t("message.newsList_source")}}</i></a>
-                </span>
-                <div class="float-right">
-                  <small class="text-muted">
-                    {{
-                    moment(item.publishedAt)
-                    }}
-                  </small>
-                </div>
-              </template>
+              <div class="news-metadata">
+                <a :href="item.url"><i>{{$t("message.newsList_source")}}</i></a>
+                <small class="text-muted">
+                  {{ moment(item.publishedAt) }}
+                </small>
+              </div>
             </b-card>
           </div>
         </b-card-group>
@@ -64,6 +58,11 @@ export default {
   font-size: 3em;
 }
 
+.news-metadata {
+  display: flex;
+  justify-content: space-between;
+}
+
 .news__con {
   padding: 1em 1em;
 }
@@ -77,7 +76,6 @@ export default {
 }
 
 .news-item {
-  /* width: 100%; */
   margin-bottom: 4em;
 }
 
