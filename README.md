@@ -10,6 +10,6 @@ Read the [CONTRIBUTING.md](CONTRIBUTING.md) and [ISSUE_TEMPLATE.md](ISSUE_TEMPLA
 Checkout the live project at https://covidimpact.ca/
 
 
-
+Want to join the project? We're welcoming coders and non-coders alike, signup today: https://bit.ly/3fvg9ti
  
 
