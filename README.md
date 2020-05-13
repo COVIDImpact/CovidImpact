@@ -10,6 +10,13 @@ Read the [CONTRIBUTING.md](CONTRIBUTING.md) and [ISSUE_TEMPLATE.md](ISSUE_TEMPLA
 Checkout the live project at https://covidimpact.ca/
 
 
-Want to join the project? We're welcoming coders and non-coders alike, signup today: https://bit.ly/3fvg9ti
- 
+Want to join the project? We're welcoming coders and non-coders alike, signup today!
+
+Join the fight! Join the cause! (Canada)
+https://forms.gle/MJ3CJJPptvCQ98jq9
+
+Launch COVIDImpact as a team lead in your country!
+https://forms.gle/LUJGUCbQMV3VFu5Q9
+
+
 
