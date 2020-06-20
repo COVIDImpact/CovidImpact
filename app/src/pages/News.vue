@@ -46,12 +46,10 @@ export default {
   },
   async mounted() {
     await this.getNewsItems();
-    console.log(this.news);
-    const promises = this.news.map((item, index) => this.getSentiment(index, item.description));
-    await Promise.all(promises);
-    const scores = Object.entries(this.sentimentScores).map(entry => entry[1]);
-    console.log(scores);
-    this.score = this.mapScoreToEmoji(scores);
+    // const promises = this.news.map((item, index) => this.getSentiment(index, item.description));
+    // await Promise.all(promises);
+    // const scores = Object.entries(this.sentimentScores).map(entry => entry[1]);
+    // this.score = this.mapScoreToEmoji(scores);
   },
   methods: {
     async getNewsItems() {
@@ -66,7 +64,7 @@ export default {
     async getSentiment(index, description) {
       const headers = {
         "x-rapidapi-host": "twinword-sentiment-analysis.p.rapidapi.com",
-        "x-rapidapi-key": "b75a76b087msh356e8673d46d70bp1b6196jsndb89ae387702",
+        "x-rapidapi-key": "",
         "content-type": "application/x-www-form-urlencoded"
       };
       const data = "text=" + description;

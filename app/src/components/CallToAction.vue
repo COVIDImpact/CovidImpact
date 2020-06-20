@@ -23,7 +23,7 @@
 </template>
 
 <script>
-const url = "https://5ha6in59k3.execute-api.us-east-1.amazonaws.com/dev/addToMemberList";
+const url = "https://944pr8gv2g.execute-api.us-east-1.amazonaws.com/dev/member";
 
 export default {
   data() {
