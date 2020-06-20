@@ -4,7 +4,7 @@
       <template v-slot:overlay>
         <div class="text-center">
           <h3 id="cancel-label">
-            {{$t("message.analytics_header")}}
+            {{ $t("message.analytics_header") }}
             <br />
             <br />
 
@@ -14,20 +14,23 @@
                   <li>
                     <b
                       v-b-tooltip.hover.right
-                      :title='$t("message.analytics_list1Hover")'
-                    >{{$t("message.analytics_list1")}}</b>
+                      :title="$t('message.analytics_list1Hover')"
+                      >{{ $t("message.analytics_list1") }}</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
-                      :title='$t("message.analytics_list2Hover")'
-                    >{{$t("message.analytics_list2")}}</b>
+                      :title="$t('message.analytics_list2Hover')"
+                      >{{ $t("message.analytics_list2") }}</b
+                    >
                   </li>
                   <li>
                     <b
                       v-b-tooltip.hover.right
-                      :title='$t("message.analytics_list3Hover")'
-                    >{{$t("message.analytics_list3")}}</b>
+                      :title="$t('message.analytics_list3Hover')"
+                      >{{ $t("message.analytics_list3") }}</b
+                    >
                   </li>
                   <!-- <li>
                     <b
@@ -45,21 +48,24 @@
               class="input-box--item"
               v-model="currentBalance"
               :state="balanceState"
-              :placeholder='$t("message.analytics_input1")'
+              :placeholder="$t('message.analytics_input1')"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="monthlyRevenue"
               :state="revenueState"
-              :placeholder='$t("message.analytics_input2")'
+              :placeholder="$t('message.analytics_input2')"
             ></b-form-input>
             <b-form-input
               class="input-box--item"
               v-model="burnRate"
               :state="burnState"
-              :placeholder='$t("message.analytics_input3")'
+              :placeholder="$t('message.analytics_input3')"
             ></b-form-input>
-            <b-form-select v-model="selected" :options="options"></b-form-select>
+            <b-form-select
+              v-model="selected"
+              :options="options"
+            ></b-form-select>
           </div>
           <div class="text-center">
             <br />
@@ -72,7 +78,8 @@
                   show = false;
                 "
                 variant="primary"
-              >{{$t("message.analytics_compute")}}</b-button>
+                >{{ $t("message.analytics_compute") }}</b-button
+              >
             </div>
             <div v-else>
               <b-button
@@ -84,7 +91,8 @@
                   show = false;
                 "
                 variant="primary"
-              >{{$t("message.analytics_compute")}}</b-button>
+                >{{ $t("message.analytics_compute") }}</b-button
+              >
             </div>
             <br />
           </div>
@@ -99,25 +107,37 @@
         </div>-->
         <br />
         <div class="d-flex justify-content-center input-box">
-          <h2 class="text-black float-left">{{$t("message.analytics_inputForm")}}</h2>
-          <label>{{$t("message.analytics_currentCashOnHand")}}</label>
+          <h2 class="text-black float-left">
+            {{ $t("message.analytics_inputForm") }}
+          </h2>
+          <label>{{ $t("message.analytics_currentCashOnHand") }}</label>
 
-          <b-form-input class="input-box--item" v-model="currentBalance" :placeholder='$("message.analytics_cashAtHand")'></b-form-input>
+          <b-form-input
+            class="input-box--item"
+            v-model="currentBalance"
+            :placeholder="$t('message.analytics_cashAtHand')"
+          ></b-form-input>
 
-          <label>{{$t("message.analytics_averageMonthlyRevenue")}}</label>
+          <label>{{ $t("message.analytics_averageMonthlyRevenue") }}</label>
           <b-form-input
             class="input-box--item"
             v-model="monthlyRevenue"
-            :placeholder='$("message.analytics_monthlyRevenue")'
+            :placeholder="$t('message.analytics_monthlyRevenue')"
           ></b-form-input>
-          <label>{{$t("message.analytics_averageMonthlyExpenses")}}</label>
-          <b-form-input class="input-box--item" v-model="burnRate" :placeholder='$("message.analytics_monthlyExpenses")'></b-form-input>
-          <label>{{$t("message.analytics_monthlyReductionInRevenue")}}</label>
+          <label>{{ $t("message.analytics_averageMonthlyExpenses") }}</label>
+          <b-form-input
+            class="input-box--item"
+            v-model="burnRate"
+            :placeholder="$t('message.analytics_monthlyExpenses')"
+          ></b-form-input>
+          <label>{{ $t("message.analytics_monthlyReductionInRevenue") }}</label>
           <b-form-select v-model="selected" :options="options"></b-form-select>
         </div>
         <div class="text-center">
           <br />
-          <b-button class="input-btn" @click="compute()" variant="primary">{{$t("message.analytics_recompute")}}</b-button>
+          <b-button class="input-btn" @click="compute()" variant="primary">{{
+            $t("message.analytics_recompute")
+          }}</b-button>
           <br />
         </div>
         <div class="text-center con-graph">
@@ -130,7 +150,9 @@
             </div>
           </div>
         </div>
-        <h2 class="text-black float-left">{{$t("message.analytics_cashBalance")}}</h2>
+        <h2 class="text-black float-left">
+          {{ $t("message.analytics_cashBalance") }}
+        </h2>
 
         <div class="text-center">
           <div class="chartDiv">
@@ -154,7 +176,7 @@ import {
   BCard,
   BFormInput,
   BOverlay,
-  BFormSelect
+  BFormSelect,
   // BButton
 } from "bootstrap-vue";
 
@@ -167,7 +189,7 @@ export default {
     Runway,
     BOverlay,
     RiskLevel,
-    BFormSelect
+    BFormSelect,
   },
   computed: {
     balanceState() {
@@ -191,7 +213,7 @@ export default {
       } else {
         return false;
       }
-    }
+    },
   },
   data() {
     return {
@@ -200,7 +222,7 @@ export default {
         { value: "1.0", text: "Please select an option" },
         { value: ".25", text: "25% decrease in revenue per month" },
         { value: ".5", text: "50% decrease in revenue per month" },
-        { value: ".75", text: "75% decrease in revenue per month" }
+        { value: ".75", text: "75% decrease in revenue per month" },
       ],
       monthlyRunway: 12,
       riskLevel: "Low",
@@ -208,7 +230,7 @@ export default {
       scenarios: [
         "Scenario 1: A 25% Decrease in Revenue",
         "Scenario 2: A 50% Decrease in Revenue",
-        "Scenario 3: A 100% Decrease in Revenue"
+        "Scenario 3: A 100% Decrease in Revenue",
       ],
       currentBalance: "",
       burnRate: "",
@@ -218,24 +240,24 @@ export default {
           xAxes: [
             {
               ticks: {
-                display: false
+                display: false,
               },
               gridLines: {
-                display: false
-              }
-            }
+                display: false,
+              },
+            },
           ],
           yAxes: [
             {
               ticks: {
-                display: false
+                display: false,
               },
               gridLines: {
-                display: false
-              }
-            }
-          ]
-        }
+                display: false,
+              },
+            },
+          ],
+        },
       },
       scenario: 1,
       showChart: "loading",
@@ -244,7 +266,7 @@ export default {
       revenueData: [0, 20, 40, 60, 90, 110, 150, 160, 150, 130, 130, 140],
       labels: [],
 
-      isDead: false
+      isDead: false,
     };
   },
   // props: [`${this.timeLeft}`],
@@ -321,8 +343,8 @@ export default {
             borderColor: "#9400D3",
             borderWidth: 3,
             data: balanceData,
-            type: "line"
-          }
+            type: "line",
+          },
           // {
           //   label: "Monthly Revenues",
           //   backgroundColor: "#9400D3",
@@ -331,7 +353,7 @@ export default {
           //   data: revenueData,
           //   type: "line"
           // }
-        ]
+        ],
       };
     },
     compute() {
@@ -432,12 +454,12 @@ export default {
                   return ref.moment(value);
                   // } else return "";
                 },
-                display: true
+                display: true,
               },
               gridLines: {
-                display: true
-              }
-            }
+                display: true,
+              },
+            },
           ],
           yAxes: [
             {
@@ -456,13 +478,13 @@ export default {
                       : Math.abs(Math.sign(value) * Math.abs(value));
                   return suffix + "$" + roundedValue;
                 },
-                display: true
+                display: true,
               },
               gridLines: {
-                display: true
-              }
-            }
-          ]
+                display: true,
+              },
+            },
+          ],
         },
         legend: {
           display: true,
@@ -498,12 +520,12 @@ export default {
                     dataset.pointBackgroundColor || dataset.backgroundColor,
                   strokeStyle: dataset.borderColor,
                   lineWidth: dataset.borderWidth,
-                  text: label + ": " + suffix + sum
+                  text: label + ": " + suffix + sum,
                 };
               });
               return legend;
-            }
-          }
+            },
+          },
         },
         tooltips: {
           custom: function(tooltip) {
@@ -527,12 +549,12 @@ export default {
             // remove title
             title: function() {
               return;
-            }
-          }
-        }
+            },
+          },
+        },
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
