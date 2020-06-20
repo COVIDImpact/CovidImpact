@@ -1,22 +1,38 @@
 <template>
   <div>
     <div class="news">
-      <h1 class="news--title text-center">{{$t("message.newsList_latestNews")}}</h1>
-      <div class="news--info text-center">{{$t("message.newsList_relevantEvents")}}</div>
-      <div class="news--info text-center">{{$t("message.newsList_outlook")}} <div id="score">{{ score }}</div>
+      <h1 class="news--title text-center">
+        {{ $t("message.newsList_latestNews") }}
+      </h1>
+      <div class="news--info text-center">
+        {{ $t("message.newsList_relevantEvents") }}
+      </div>
+      <div class="news--info text-center">
+        {{ $t("message.newsList_outlook") }}
+        <div id="score">{{ score }}</div>
       </div>
     </div>
 
-    <b-tooltip target="score" :title="$t('message.newsList_outlookDescription')"></b-tooltip>
+    <b-tooltip
+      target="score"
+      :title="$t('message.newsList_outlookDescription')"
+    ></b-tooltip>
 
     <div class="news__con">
       <div class="text-center">
         <b-card-group columns>
           <div v-for="(item, index) in items" :key="index">
-            <b-card class="news-item" :img-src="item.urlToImage" :title="item.title">
+            <b-card
+              class="news-item"
+              :img-src="item.urlToImage"
+              img-alt="item.title"
+              :title="item.title"
+            >
               <b-card-text>{{ item.description }}</b-card-text>
               <div class="news-metadata">
-                <a :href="item.url"><i>{{$t("message.newsList_source")}}</i></a>
+                <a :href="item.url"
+                  ><i>{{ $t("message.newsList_source") }}</i></a
+                >
                 <small class="text-muted">
                   {{ moment(item.publishedAt) }}
                 </small>
@@ -37,7 +53,7 @@ export default {
   name: "financialaid",
   props: ["items", "score"],
   components: {
-    BCard
+    BCard,
   },
   data() {
     return {};
@@ -45,12 +61,11 @@ export default {
   methods: {
     moment: function(date) {
       return moment(date).format(" MMM DD, hh:mm a");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
-
 .news {
   width: 100%;
 }

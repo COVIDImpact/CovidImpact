@@ -2,16 +2,14 @@
   <div>
     <CallToAction></CallToAction>
     <Navbar></Navbar>
-
     <div>
-      <div v-if="isLoading">{{$t("message.loading")}}</div>
+      <div v-if="isLoading">{{ $t("message.loading") }}</div>
       <div v-else>
         <ul id="example-1">
           <NewsList :items="news" :score="score"></NewsList>
         </ul>
       </div>
     </div>
-
     <Footer></Footer>
   </div>
 </template>
@@ -26,7 +24,7 @@ import { median } from "mathjs";
 const newsApiUrl =
   'https://newsapi.org/v2/everything?apiKey=c1b7824e846c4aeb91684b4b7ef6874c&pageSize=29&page=1&fbclid=IwAR1zJknmRvxP6QkFxlJ23UqMy4eXUv2X36sbEugYQTsxwFsUaY2uKILjxZ8&sortBy=publishedAt&q="canadian businesses"AND Covid';
 const sentimentApiUrl =
-  'https://twinword-sentiment-analysis.p.rapidapi.com/analyze/';
+  "https://twinword-sentiment-analysis.p.rapidapi.com/analyze/";
 
 export default {
   name: "financialaid",
@@ -34,7 +32,7 @@ export default {
     CallToAction,
     Navbar,
     Footer,
-    NewsList
+    NewsList,
   },
   data() {
     return {
@@ -65,10 +63,12 @@ export default {
       const headers = {
         "x-rapidapi-host": "twinword-sentiment-analysis.p.rapidapi.com",
         "x-rapidapi-key": "",
-        "content-type": "application/x-www-form-urlencoded"
+        "content-type": "application/x-www-form-urlencoded",
       };
       const data = "text=" + description;
-      const response  = await this.axios.post(sentimentApiUrl, data, {headers});
+      const response = await this.axios.post(sentimentApiUrl, data, {
+        headers,
+      });
       this.sentimentScores[index] = response.data.score;
     },
     mapScoreToEmoji(scores) {
@@ -80,8 +80,8 @@ export default {
       } else {
         return "😐";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

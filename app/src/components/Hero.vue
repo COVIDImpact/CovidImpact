@@ -2,7 +2,9 @@
   <div class="hero">
     <div class="hero__con">
       <div class="hero__con--row">
-        <h1 class="hero__con--title">{{$t("message.hero_businessCarePackage")}}</h1>
+        <h1 class="hero__con--title">
+          {{ $t("message.hero_businessCarePackage") }}
+        </h1>
       </div>
       <div class="hero__con--info">
         <p v-html="$t('message.hero_welcome')"></p>
@@ -13,9 +15,12 @@
           <b-img
             class="hero_con--icon1"
             fluid
+            alt="Store with money sign representing Small Business owners and grants"
             :src="require('../assets/icons/bus.svg')"
           />
-          <b-card class="hero__con--btn">{{$t("message.hero_financialCard")}}</b-card>
+          <b-card class="hero__con--btn">{{
+            $t("message.hero_financialCard")
+          }}</b-card>
         </b-link>
       </div>
       <!-- </div> -->
@@ -24,9 +29,12 @@
           <b-img
             class="hero_con--icon2"
             fluid
+            alt="Analytics and female business leader representing a tool that makes personalized recommendations"
             :src="require('../assets/icons/analytics.svg')"
           />
-          <b-card class="hero__con--btn">{{$t("message.hero_businessAssessmentTool")}}</b-card>
+          <b-card class="hero__con--btn">{{
+            $t("message.hero_businessAssessmentTool")
+          }}</b-card>
         </b-link>
       </div>
       <div class="hero__con--row text-center">
@@ -35,9 +43,12 @@
             <b-img
               class="hero_con--icon2"
               fluid
+              alt="Man reading a newspaper of COVID-19 smart Business News"
               :src="require('../assets/icons/news.svg')"
             />
-            <b-card class="hero__con--btn">{{$t("message.hero_newsForBusinesses")}}</b-card>
+            <b-card class="hero__con--btn">{{
+              $t("message.hero_newsForBusinesses")
+            }}</b-card>
           </b-link>
         </div>
         <!-- <div class="hero__con-row--col"></div> -->
@@ -53,8 +64,8 @@ export default {
   components: {
     BCard,
     BImg,
-    BLink
-  }
+    BLink,
+  },
 };
 </script>
 

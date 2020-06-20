@@ -1,9 +1,9 @@
 <template>
   <div class="form">
     <div class="form__con">
-      <h1 class="form__con--title">{{$("message.prepare_header")}}</h1>
+      <h1 class="form__con--title">{{ $("message.prepare_header") }}</h1>
       <div class="form__con--info">
-        {{$("message.prepare_form")}}
+        {{ $("message.prepare_form") }}
         <br />
         <br />
         <ul>
@@ -11,19 +11,22 @@
             <b
               v-b-tooltip.hover.right
               :title="$t('message.prepare_list1Hover')"
-            >{{$("message.prepare_list1")}}</b>
+              >{{ $("message.prepare_list1") }}</b
+            >
           </li>
           <li>
             <b
               v-b-tooltip.hover.right
               :title="$t('message.prepare_list2Hover')"
-            >{{$("message.prepare_list2")}}</b>
+              >{{ $("message.prepare_list2") }}</b
+            >
           </li>
           <li>
             <b
               v-b-tooltip.hover.right
               :title="$t('message.prepare_list3Hover')"
-            >{{$("message.prepare_list3")}}</b>
+              >{{ $("message.prepare_list3") }}</b
+            >
           </li>
         </ul>
       </div>
@@ -37,7 +40,7 @@
 export default {
   components: {
     // BTooltip
-  }
+  },
 };
 </script>
 

@@ -6,11 +6,11 @@
       <div class="assessment__con">
         <h1 class="assessment__con--title text-center">
           <!-- How will COVID-19 affect your business? -->
-          {{$t("message.assessment_header")}}
+          {{ $t("message.assessment_header") }}
         </h1>
-        <div
-          class="assessment__con--info text-center"
-        >{{$t("message.assessment_findOut")}}</div>
+        <div class="assessment__con--info text-center">
+          {{ $t("message.assessment_findOut") }}
+        </div>
       </div>
     </div>
     <Analytics></Analytics>
@@ -33,8 +33,8 @@ export default {
     CallToAction,
     Navbar,
     Analytics,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
